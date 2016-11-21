@@ -15,6 +15,7 @@ archer:
   activated: true
   activated_at: <%= Time.zone.now %>
 
+# has no microposts
 lana:
   name: Lana Kane
   email: hands@example.gov
