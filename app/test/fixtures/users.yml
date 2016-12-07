@@ -15,6 +15,21 @@ archer:
   activated: true
   activated_at: <%= Time.zone.now %>
 
+# carl and tom have no relationships - blank slate for tests
+carl:
+  name: Carl Carlson
+  email: carl@example.gov
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+tom:
+  name: Tom Thomson
+  email: tom@example.gov
+  password_digest: <%= User.digest('password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
 # has no microposts
 lana:
   name: Lana Kane
