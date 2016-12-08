@@ -1,0 +1,21 @@
+<% provide(:title, @sequence.description) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= @sequence.description %>
+      </h1>
+      <section class="picture_form">
+        <%= render partial: 'shared/picture_form', locals: {sequence_id: @sequence.id} %>
+      </section>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @pictures.any? %>
+      <h3>Pictures (<%= @pictures.count %>)</h3>
+      <ol class="sequences">
+        <%= render @pictures %>
+      </ol>
+    <% end %>
+  </div>
+</div>

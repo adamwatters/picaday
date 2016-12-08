@@ -1,0 +1,7 @@
+<li id="picture-<%= picture.id %>">
+  <%= image_tag picture.image %>
+  <% if current_user?(picture.sequence.user) %>
+    <%= link_to "delete", picture, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+  <% end %>
+</li>

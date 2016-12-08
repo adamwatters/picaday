@@ -11,6 +11,12 @@
     </section>
   </aside>
   <div class="col-md-8">
+    <% if @user.sequences.any? %>
+      <h3>Sequences (<%= @user.sequences.count %>)</h3>
+      <ol class="sequences">
+        <%= render @sequences %>
+      </ol>
+    <% end %>
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
