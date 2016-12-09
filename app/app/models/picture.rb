@@ -9,7 +9,7 @@ class Picture < ApplicationRecord
   after_update :crop_picture
 
   def crop_picture
-    image.recreate_versions!
+    image.recreate_versions! if crop_x.present?
   end
 
   private

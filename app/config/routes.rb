@@ -12,10 +12,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :microposts,          only: [:create, :destroy]
   resources :sequences,          only: [:create, :show, :destroy]
-  resources :pictures,            only: [:create, :update, :show, :destroy] do
-    member do
-      get :crop
-    end
-  end
+  resources :pictures,            only: [:new, :create, :edit, :update, :show, :destroy]
   resources :relationships,       only: [:create, :destroy]
 end
