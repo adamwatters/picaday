@@ -1,13 +1,5 @@
 <li id="sequence-<%= sequence.id %>">
-  <span class="user"><%= link_to sequence.user.name, sequence.user %></span>
   <span class="content">
     <%= link_to sequence.description, sequence %>
-  </span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(sequence.created_at) %> ago.
-    <% if current_user?(sequence.user) %>
-      <%= link_to "delete", sequence, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-    <% end %>
   </span>
 </li>
