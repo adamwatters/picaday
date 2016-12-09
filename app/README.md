@@ -1,5 +1,11 @@
 # README
 
+## NEXT STEPS
+
+* install rails react
+
+* build sequences component
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
