@@ -6,10 +6,10 @@ class Picture < ApplicationRecord
   default_scope -> { order(created_at: :asc) }
   belongs_to :sequence
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  after_update :crop_picture
 
   def crop_picture
-    puts 'in crop_picture'
-    image.recreate_versions! if crop_x.present?
+    image.recreate_versions!
   end
 
   private

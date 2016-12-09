@@ -27,7 +27,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process :scale => [200, 300]
+  process :resize_to_limit => [800, 800]
   #
   # def scale(width, height)
   #   # do something
@@ -39,11 +39,9 @@ class PictureUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [300, 300]
   end
 
-  version :large do
-    process :resize_to_limit => [900, 900]
-  end
-
   def crop
+    puts 'in crop'
+    puts model.crop_x
     if model.crop_x.present?
       manipulate! do |img|
         x = model.crop_x.to_i

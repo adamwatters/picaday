@@ -17,9 +17,9 @@ class PicturesController < ApplicationController
 
   def update
     @picture = Picture.find(params[:id])
-    @picture.crop_picture
     @sequence = @picture.sequence
-    redirect_to @sequence
+    @feed_items = []
+    render @picture
   end
 
   def crop
@@ -40,7 +40,7 @@ class PicturesController < ApplicationController
   private
 
   def picture_params
-    params.require(:picture).permit(:image)
+    params.require(:picture).permit(:image, :crop_x, :crop_y, :crop_w, :crop_h)
   end
 
   def correct_user
