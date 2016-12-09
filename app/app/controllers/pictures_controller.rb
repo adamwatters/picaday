@@ -6,18 +6,29 @@ class PicturesController < ApplicationController
     @sequence = Sequence.find(params[:sequence_id])
     @picture = @sequence.pictures.build(picture_params)
     if @picture.save
-      flash[:success] = "Picture uploaded!"
-      redirect_to @sequence
+      redirect_to crop_picture_path(@picture)
+      # flash[:success] = "Picture uploaded!"
+      # redirect_to @sequence
     else
       @feed_items = []
       render 'static_pages/home'
     end
   end
 
+  def update
+    @picture = Picture.find(params[:id])
+    @picture.crop_picture
+    @sequence = @picture.sequence
+    redirect_to @sequence
+  end
+
+  def crop
+    @picture = Picture.find(params[:id])
+    render 'crop'
+  end
+
   def show
-    @sequence = Sequence.find(params[:id])
-    @pictures = @sequence.pictures
-    @picture  = @sequences.pictures.build
+    @picture = Picture.find(params[:id])
   end
 
   def destroy

@@ -5,6 +5,12 @@ class Picture < ApplicationRecord
   mount_uploader :image, ::PictureUploader
   default_scope -> { order(created_at: :asc) }
   belongs_to :sequence
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+
+  def crop_picture
+    puts 'in crop_picture'
+    image.recreate_versions! if crop_x.present?
+  end
 
   private
 

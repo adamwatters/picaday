@@ -1,5 +1,4 @@
 <%= form_for(@picture, html: { multipart: true }) do |f| %>
-  <%= sequence_id %>
   <%= render 'shared/error_messages', object: f.object %>
   <span class="picture">
     <%= hidden_field_tag :sequence_id, sequence_id %>
@@ -9,9 +8,9 @@
 <% end %>
 <script type="text/javascript">
   $('#micropost_picture').bind('change', function() {
-                    var size_in_megabytes = this.files[0].size/1024/1024;
-                    if (size_in_megabytes > 5) {
-                      alert('Maximum file size is 5MB. Please choose a smaller file.');
-                    }
-                  });
+                      var size_in_megabytes = this.files[0].size/1024/1024;
+                      if (size_in_megabytes > 5) {
+                        alert('Maximum file size is 5MB. Please choose a smaller file.');
+                      }
+                    });
 </script>
