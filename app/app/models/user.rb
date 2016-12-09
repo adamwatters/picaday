@@ -9,7 +9,6 @@ class User < ApplicationRecord
     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
     foreign_key: "follower_id",
     dependent:   :destroy
@@ -59,8 +58,6 @@ class User < ApplicationRecord
   def feed
     following_ids = "SELECT followed_id FROM relationships
                      WHERE  follower_id = :user_id"
-    Micropost.where("user_id IN (#{following_ids})
-                     OR user_id = :user_id", user_id: id)
   end
 
   # Follows a user.
