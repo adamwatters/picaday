@@ -4,4 +4,8 @@ class Sequence < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :description, presence: true, length: { maximum: 140 }
+
+  def picture_urls
+    self.pictures.map{|picture| picture.image_url(:thumb)}
+  end
 end

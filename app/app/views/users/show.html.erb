@@ -7,7 +7,7 @@
   </section>
   <% if @user.sequences.any? %>
     <ol class="sequences">
-      <%= render @sequences %>
+      <%= sequences_react_component(@sequences) %>
     </ol>
   <% end %>
   <section class="sequence_form">

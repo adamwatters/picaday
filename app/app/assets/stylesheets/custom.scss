@@ -203,3 +203,7 @@ aside {
   margin-top: 45px;
   @include box_sizing;
 }
+
+#cropbox {
+  max-width: 100%;
+}

@@ -8,4 +8,10 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def sequences_react_component(sequences)
+    tag('div', id:'root', data: {props: sequences.map{|sequence|
+                                   {description: sequence.description, pictureURLs:sequence.picture_urls}
+    }})
+  end
 end
