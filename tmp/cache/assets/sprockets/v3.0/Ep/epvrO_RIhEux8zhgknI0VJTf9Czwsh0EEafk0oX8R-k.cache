@@ -1,0 +1,32 @@
+I"ò(function() {
+  var PictureCropper,
+    bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+  jQuery(function() {
+    return new PictureCropper();
+  });
+
+  PictureCropper = (function() {
+    function PictureCropper() {
+      this.update = bind(this.update, this);
+      $('#cropbox').Jcrop({
+        aspectRatio: 1,
+        setSelect: [0, 0, 800, 800],
+        onSelect: this.update,
+        onChange: this.update
+      });
+    }
+
+    PictureCropper.prototype.update = function(coords) {
+      $('#picture_crop_x').val(coords.x);
+      $('#picture_crop_y').val(coords.y);
+      $('#picture_crop_w').val(coords.w);
+      return $('#picture_crop_h').val(coords.h);
+    };
+
+    return PictureCropper;
+
+  })();
+
+}).call(this);
+:ET

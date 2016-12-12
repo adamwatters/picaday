@@ -1,0 +1,21 @@
+I";(function() {
+  var PictureCropper;
+
+  jQuery(function() {
+    return new PictureCropper();
+  });
+
+  PictureCropper = (function() {
+    function PictureCropper() {
+      $('#cropbox').Jcrop({
+        aspectRatio: 1,
+        setSelect: [400, 400]
+      });
+    }
+
+    return PictureCropper;
+
+  })();
+
+}).call(this);
+:ET
