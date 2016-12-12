@@ -6,9 +6,9 @@
     </h1>
   </section>
   <% if @user.sequences.any? %>
-    <ol class="sequences">
+    <div class="sequences">
       <%= sequences_react_component(@sequences) %>
-    </ol>
+    </div>
   <% end %>
   <section class="sequence_form">
     <%= render 'shared/sequence_form' %>

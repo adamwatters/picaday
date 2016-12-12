@@ -11,6 +11,7 @@ class App extends Component {
     const sequences = this.props.sequences.map(function(s, i){
       return <Sequence  key={s.description} 
                         description={s.description} 
+                        link={s.link}
                         pictureURLs={s.pictureURLs} />
     })
 

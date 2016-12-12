@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     if logged_in?
-      @sequence  = current_user.sequences.build
+      redirect_to current_user
     end
   end
 end
