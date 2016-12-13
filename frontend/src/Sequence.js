@@ -31,12 +31,13 @@ class Sequence extends Component {
     const floor = Math.floor(value);
 
     var pictures = pictureURLs.map(function(url, index){
+      const first = index === 0
       if (floor === index) {
-        return <Picture opacity={1 - (floor - value)} key={description + '-' + index} url={url} />
+        return <Picture opacity={1} first={first} key={description + '-' + index} url={url} />
       } else if (ceil === index) {
-        return <Picture opacity={1 - (ceil - value)} key={description + '-' + index} url={url} />
+        return <Picture opacity={1 - (ceil - value)} first={first} key={description + '-' + index} url={url} />
       } else {
-        return <Picture opacity={0} key={description + '-' + index} url={url} />
+        return <Picture opacity={0} first={first} key={description + '-' + index} url={url} />
       }
     })
 

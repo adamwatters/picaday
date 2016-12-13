@@ -47,8 +47,8 @@
   \******************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(/*! /Users/adamwatters/workspace/picaday/app/frontend/config/polyfills.js */1);
-	module.exports = __webpack_require__(/*! /Users/adamwatters/workspace/picaday/app/frontend/src/index.js */8);
+	__webpack_require__(/*! /Users/adamwatters/workspace/picaday/frontend/config/polyfills.js */1);
+	module.exports = __webpack_require__(/*! /Users/adamwatters/workspace/picaday/frontend/src/index.js */8);
 
 
 /***/ },
@@ -23313,12 +23313,13 @@
 	      var floor = Math.floor(value);
 
 	      var pictures = pictureURLs.map(function (url, index) {
+	        var first = index === 0;
 	        if (floor === index) {
-	          return _react2.default.createElement(_Picture2.default, { opacity: 1 - (floor - value), key: description + '-' + index, url: url });
+	          return _react2.default.createElement(_Picture2.default, { opacity: 1, first: first, key: description + '-' + index, url: url });
 	        } else if (ceil === index) {
-	          return _react2.default.createElement(_Picture2.default, { opacity: 1 - (ceil - value), key: description + '-' + index, url: url });
+	          return _react2.default.createElement(_Picture2.default, { opacity: 1 - (ceil - value), first: first, key: description + '-' + index, url: url });
 	        } else {
-	          return _react2.default.createElement(_Picture2.default, { opacity: 0, key: description + '-' + index, url: url });
+	          return _react2.default.createElement(_Picture2.default, { opacity: 0, first: first, key: description + '-' + index, url: url });
 	        }
 	      });
 
@@ -23879,17 +23880,23 @@
 
 	var Picture = function Picture(_ref) {
 	  var url = _ref.url,
-	      opacity = _ref.opacity;
+	      opacity = _ref.opacity,
+	      first = _ref.first;
 
 	  var pictureStyle = {
 	    opacity: opacity
 	  };
-	  return _react2.default.createElement('img', { className: 'picture', style: pictureStyle, src: url, role: 'presentation' });
+	  if (first) {
+	    return _react2.default.createElement('img', { className: 'picture picture-first', style: pictureStyle, src: url, role: 'presentation' });
+	  } else {
+	    return _react2.default.createElement('img', { className: 'picture', style: pictureStyle, src: url, role: 'presentation' });
+	  }
 	};
 
 	Picture.propTypes = {
 	  url: _react.PropTypes.string.isRequired,
-	  opacity: _react.PropTypes.number.isRequired
+	  opacity: _react.PropTypes.number.isRequired,
+	  first: _react.PropTypes.bool.isRequired
 	};
 
 		exports.default = Picture;

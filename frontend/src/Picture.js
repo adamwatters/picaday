@@ -1,17 +1,20 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 
-const Picture = ({url, opacity}) => {
+const Picture = ({url, opacity, first}) => {
   const pictureStyle = {
     opacity: opacity
   }
-  return (
-    <img className={'picture'} style={pictureStyle} src={url} role='presentation' />
-  )
+  if (first) {
+    return <img className={'picture picture-first'} style={pictureStyle} src={url} role='presentation' />
+  } else {
+    return <img className={'picture'} style={pictureStyle} src={url} role='presentation' />
+  }
 }
 
 Picture.propTypes = {
   url: PropTypes.string.isRequired,
-  opacity: PropTypes.number.isRequired
+  opacity: PropTypes.number.isRequired,
+  first: PropTypes.bool.isRequired
 }
 
 export default Picture

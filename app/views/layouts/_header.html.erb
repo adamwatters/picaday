@@ -6,17 +6,17 @@
     <ul class="navigation-list float-right">
       <% if logged_in? %>
         <li class="navigation-item">
-          <%= link_to "Profile", current_user, class:"navigation-item" %>
+          <%= link_to "Profile", current_user, class:"navigation-link" %>
         </li>
         <li class="navigation-item">
-          <%= link_to "Log out", logout_path, class:"navigation-item", method: "delete" %>
+          <%= link_to "Log out", logout_path, class:"navigation-link", method: "delete" %>
         </li>
       <% else %>
         <li class="navigation-item">
-          <%= link_to "Sign up", signup_path, class:"navigation-item" %>
+          <%= link_to "Sign up", signup_path, class:"navigation-link" %>
         </li>
         <li class="navigation-item">
-          <%= link_to "Log in", login_path, class:"navigation-item" %>
+          <%= link_to "Log in", login_path, class:"navigation-link" %>
         </li>
       <% end %>
     </ul>

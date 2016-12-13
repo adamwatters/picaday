@@ -1,13 +1,20 @@
 .sequence {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   margin: auto;
 }
 
 .pictures {
-  width: 500px;
-  height: 500px;
+  position: relative;
 }
 
 .picture {
+  width: 500px;
   position: absolute;
+  left: 0px;
+
+  &.picture-first {
+    position: inherit;
+  }
 }
+
