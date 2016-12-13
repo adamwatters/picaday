@@ -33172,3 +33172,106 @@ Processing by SequencesController#show as HTML
 Completed 200 OK in 120ms (Views: 110.6ms | ActiveRecord: 2.2ms)
 
 
+Started GET "/sequences/6" for ::1 at 2016-12-13 13:41:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (6.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SequencesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mSequence Load (1.3ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" WHERE "sequences"."id" = $1 ORDER BY "sequences"."created_at" DESC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering sequences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.0ms)
+  Rendered shared/_picture_form.html.erb (43.2ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."sequence_id" = $1[0m  [["sequence_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."sequence_id" = $1[0m  [["sequence_id", 6]]
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 6]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of pictures/_picture.html.erb [5 times] (46.6ms)
+  Rendered sequences/show.html.erb within layouts/application (695.9ms)
+  Rendered layouts/_shim.html.erb (1.1ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 1478ms (Views: 1374.5ms | ActiveRecord: 22.7ms)
+
+
+Started POST "/pictures" for ::1 at 2016-12-13 13:41:17 -0500
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B5RTQjO3/rhDizjCEz8rcrq4x6+F+4yxjcErtRqnp8u1tJr/raLiEWZ7xDnGOG8hA6G3nX+t+tAx4e9p48px6g==", "sequence_id"=>"6", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fc95758e3a0 @tempfile=#<Tempfile:/var/folders/th/5rghl8390kl7hwt726gzwql80000gn/T/RackMultipart20161213-3188-33ovx.png>, @original_filename="Screen Shot 2016-12-12 at 3.59.24 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"Screen Shot 2016-12-12 at 3.59.24 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSequence Load (0.6ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" WHERE "sequences"."id" = $1 ORDER BY "sequences"."created_at" DESC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "pictures" ("sequence_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sequence_id", 6], ["image", "Screen_Shot_2016-12-12_at_3.59.24_PM.png"], ["created_at", 2016-12-13 18:41:18 UTC], ["updated_at", 2016-12-13 18:41:18 UTC]]
+  [1m[35m (18.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/72/edit
+Completed 302 Found in 1135ms (ActiveRecord: 21.9ms)
+
+
+Started GET "/pictures/72/edit" for ::1 at 2016-12-13 13:41:19 -0500
+Processing by PicturesController#edit as HTML
+  Parameters: {"id"=>"72"}
+  [1m[36mPicture Load (0.8ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 ORDER BY "pictures"."created_at" ASC LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  Rendering pictures/edit.html.erb within layouts/application
+  Rendered pictures/edit.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 92ms (Views: 85.3ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/pictures/72" for ::1 at 2016-12-13 13:41:21 -0500
+Processing by PicturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tgzEDa0kKr9jPT13Ysns7HGCHrr78OsgkFs9TCs4aGoELA2wMzE2FkbNwYy3zqi/yJtuiAGmnUEse/mQ0lW+Sw==", "picture"=>{"crop_x"=>"139.59999999999997", "crop_y"=>"65.09999999999997", "crop_w"=>"520.8000000000001", "crop_h"=>"520.8000000000001"}, "commit"=>"Crop", "id"=>"72"}
+  [1m[36mPicture Load (1.5ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 ORDER BY "pictures"."created_at" ASC LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.6ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 607ms (ActiveRecord: 8.9ms)
+
+
+  
+CarrierWave::ProcessingError (Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: `mogrify -crop #{w}x#{h}+#{x}+#{y} /var/folders/th/5rghl8390kl7hwt726gzwql80000gn/T/mini_magick20161213-3188-1ytgmji.png` failed with error:
+mogrify: invalid argument for option `#{w}x#{h}+#{x}+#{y}': -crop @ error/mogrify.c/MogrifyImageCommand/4481.
+):
+  
+app/uploaders/picture_uploader.rb:44:in `crop'
+app/models/picture.rb:12:in `crop_picture'
+app/controllers/pictures_controller.rb:21:in `update'
+  Rendering /Users/adamwatters/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/adamwatters/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/adamwatters/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /Users/adamwatters/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/adamwatters/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/adamwatters/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/adamwatters/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/adamwatters/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (111.4ms)
+Started PATCH "/pictures/72" for ::1 at 2016-12-13 13:41:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PicturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tgzEDa0kKr9jPT13Ysns7HGCHrr78OsgkFs9TCs4aGoELA2wMzE2FkbNwYy3zqi/yJtuiAGmnUEse/mQ0lW+Sw==", "picture"=>{"crop_x"=>"139.59999999999997", "crop_y"=>"65.09999999999997", "crop_w"=>"520.8000000000001", "crop_h"=>"520.8000000000001"}, "commit"=>"Crop", "id"=>"72"}
+  [1m[36mPicture Load (1.1ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 ORDER BY "pictures"."created_at" ASC LIMIT $2[0m  [["id", 72], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSequence Load (0.6ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" WHERE "sequences"."id" = $1 ORDER BY "sequences"."created_at" DESC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sequences/6
+Completed 302 Found in 1287ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/sequences/6" for ::1 at 2016-12-13 13:41:55 -0500
+Processing by SequencesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mSequence Load (0.4ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" WHERE "sequences"."id" = $1 ORDER BY "sequences"."created_at" DESC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering sequences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered shared/_picture_form.html.erb (20.5ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."sequence_id" = $1[0m  [["sequence_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."sequence_id" = $1[0m  [["sequence_id", 6]]
+  [1m[36mPicture Load (0.7ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 6]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of pictures/_picture.html.erb [6 times] (48.2ms)
+  Rendered sequences/show.html.erb within layouts/application (729.3ms)
+  Rendered layouts/_shim.html.erb (1.5ms)
+  Rendered layouts/_header.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 1433ms (Views: 1407.3ms | ActiveRecord: 6.4ms)
+
+
