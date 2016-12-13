@@ -11,6 +11,5 @@
 // about supported directives.
 //
 //= require cropper
-//= require bootstrap
 //= require pictures
 //= require build/main

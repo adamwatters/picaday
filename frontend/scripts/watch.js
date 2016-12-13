@@ -72,40 +72,6 @@ recursive(paths.appDev, (err, fileNames) => {
   build(previousSizeMap);
 });
 
-// Print a detailed summary of build files.
-function printFileSizes(stats, previousSizeMap) {
-  var assets = stats.toJson().assets
-    .filter(asset => /\.(js|css)$/.test(asset.name))
-    .map(asset => {
-      var fileContents = fs.readFileSync(paths.appDev + '/' + asset.name);
-      var size = gzipSize(fileContents);
-      var previousSize = previousSizeMap[removeFileNameHash(asset.name)];
-      var difference = getDifferenceLabel(size, previousSize);
-      return {
-        folder: path.join('build', path.dirname(asset.name)),
-        name: path.basename(asset.name),
-        size: size,
-        sizeLabel: filesize(size) + (difference ? ' (' + difference + ')' : '')
-      };
-    });
-  assets.sort((a, b) => b.size - a.size);
-  var longestSizeLabelLength = Math.max.apply(null,
-    assets.map(a => stripAnsi(a.sizeLabel).length)
-  );
-  assets.forEach(asset => {
-    var sizeLabel = asset.sizeLabel;
-    var sizeLength = stripAnsi(sizeLabel).length;
-    if (sizeLength < longestSizeLabelLength) {
-      var rightPadding = ' '.repeat(longestSizeLabelLength - sizeLength);
-      sizeLabel += rightPadding;
-    }
-    console.log(
-      '  ' + sizeLabel +
-      '  ' + chalk.dim(asset.folder + path.sep) + chalk.cyan(asset.name)
-    );
-  });
-}
-
 // Print out errors
 function printErrors(summary, errors) {
   console.log(chalk.red(summary));
@@ -140,12 +106,5 @@ function build(previousSizeMap) {
           printErrors('Failed to compile.', stats.compilation.warnings);
         }
     }
-  });
-}
-
-function copyPublicFolder() {
-  fs.copySync(paths.appPublic, paths.appDev, {
-    dereference: true,
-    filter: file => file !== paths.appHtml
   });
 }

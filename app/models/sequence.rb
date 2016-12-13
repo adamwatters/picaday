@@ -5,6 +5,10 @@ class Sequence < ApplicationRecord
   validates :user_id, presence: true
   validates :description, presence: true, length: { maximum: 140 }
 
+  def self.feed_for(user)
+    take(5)
+  end
+
   def picture_urls
     self.pictures.map{|picture| picture.image_url(:thumb)}
   end
