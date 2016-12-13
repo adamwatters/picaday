@@ -2,9 +2,7 @@
 
 ## NEXT STEPS
 
-* install rails react
-
-* build sequences component
+* added imagemagick buildpack from thoughtbot https://github.com/thoughtbot/paperclip/wiki/Upgrade-Imagemagick-On-Heroku
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
