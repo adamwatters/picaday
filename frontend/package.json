@@ -48,6 +48,8 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "cropperjs": "^1.0.0-alpha",
+    "doc-ready": "^1.0.4",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-rangeslider": "^1.0.9"

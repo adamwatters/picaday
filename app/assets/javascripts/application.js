@@ -10,6 +10,5 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require cropper
-//= require pictures
 //= require build/main
+//= require pictures

@@ -41473,3 +41473,947 @@ puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
 puma (3.6.0) lib/puma/server.rb:415:in `process_client'
 puma (3.6.0) lib/puma/server.rb:275:in `block in run'
 puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-12-16 09:29:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (24.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mSequence Load (26.4ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (47.2ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (123.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 1148ms (Views: 956.9ms | ActiveRecord: 107.7ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 09:29:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mSequence Load (0.9ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (1.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (104.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 875ms (Views: 774.3ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/login" for ::1 at 2016-12-16 09:29:53 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (554.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 594ms (Views: 591.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-12-16 09:30:08 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-12-16 09:30:18 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (797.2ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 850ms (Views: 847.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-12-16 09:30:32 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.2ms)
+  Rendered users/new.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 57ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 09:30:38 -0500
+Processing by StaticPagesController#home as HTML
+  [1m[36mSequence Load (1.8ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (1.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 76ms (Views: 70.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/login" for ::1 at 2016-12-16 09:31:11 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-12-16 09:31:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6V7IASkOSJ16FKQEhu6uFbauqsuQ9SWrM/113jxP/ZKIVgK4NKz2oxN47GR8XRT3zSBbo5jjEV5LHfjk4HEQDg==", "session"=>{"email"=>"adamwatters11@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (35.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adamwatters11@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 141ms (Views: 35.6ms | ActiveRecord: 36.1ms)
+
+
+Started POST "/login" for ::1 at 2016-12-16 09:31:25 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IOWS15qS8ovxiOb+laXb5XjTuM4yv0IXbQdTnfuS20dB7VhuhzBMtZjkrp5vFmEHA11JpjqpduIV596nJ6w22w==", "session"=>{"email"=>"erika@healthkickny.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "erika@healthkickny.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/login" for ::1 at 2016-12-16 09:31:35 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/dCt4iGlzUbERBjKcxpRiCf5wi+aHds94u7NJl3rA2Cc2GdbPAdzeK0oUKqJqetqXHczR5IL78iaDkAcgdXu/A==", "session"=>{"email"=>"adamwatters11@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adamwatters11@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/login" for ::1 at 2016-12-16 09:31:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7EpzlVJ05kr6LicW+XqGnPR57SdOUeuxiwGaYfahFwKNQrksT9ZYdJNCb3YDyTx+j/ccT0ZH30Tz4RdbKp/6ng==", "session"=>{"email"=>"adamwatters11@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adamwatters11@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_shim.html.erb (1.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 47.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/login" for ::1 at 2016-12-16 09:31:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gz8pNh9EACmfI7bofx9u5ZvwQb8vx74/jwveToA88VTiN+OPAua+F/ZP/oiFrNQH4H6w1yfRisr361N0XAIcyA==", "session"=>{"email"=>"adamwatters11@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adamwatters11@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for ::1 at 2016-12-16 09:32:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iZtKU8W5FdlXBsrIC639r+t5ycZr7rnBHLSBbGLU2Pfok4Dq2Bur5z5qgqjxHkdNkPc4rmP4jTRkVAxWvuo1aw==", "session"=>{"email"=>"adamwatters11@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adamwatters11@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 60ms (Views: 50.9ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/login" for ::1 at 2016-12-16 09:32:53 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"df8KFU44BLKI2QohtAlnne5WiEVUDJfmj9KMGB7ftcAU98CsU5q6jOG1QkFOut1/ldh5LVwaoxP3MgEiwuFYXA==", "session"=>{"email"=>"adamwatters11@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adamwatters11@gmail.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 55ms (Views: 45.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/login" for ::1 at 2016-12-16 09:32:59 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2016-12-16 09:33:05 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered users/new.html.erb within layouts/application (6.3ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-12-16 09:33:20 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y5PryRQ9lA1MXWhYLv5bKia2pt+PBZuLNYWqx0A6uQKqmyFwCZ8qMyUxIDjUTeHIXThXt4cTr35NZSf9nARUng==", "user"=>{"name"=>"Adam Watters", "email"=>"adamwatters11@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (9.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "adamwatters11@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Adam Watters"], ["email", "adamwatters11@gmail.com"], ["created_at", 2016-12-16 14:33:20 UTC], ["updated_at", 2016-12-16 14:33:20 UTC], ["password_digest", "$2a$10$iwaT/RkmYHz7PsJ9c8wSueRvPNE0wB.aAnDDEGnA.syzGabrXi4Cu"], ["activation_digest", "$2a$10$1peXa3YBVy26jUDa70R9x.H5vZkORjvjm6UbTVtqiUOi3zVkE56qy"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (3.6ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (1.1ms)
+UserMailer#account_activation: processed outbound mail in 270.4ms
+Sent mail to adamwatters11@gmail.com (17.7ms)
+Date: Fri, 16 Dec 2016 09:33:21 -0500
+From: noreply@example.com
+To: adamwatters11@gmail.com
+Message-ID: <5853fb3167222_75d3ff66949f51c89061@localhost.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5853fb3163f00_75d3ff66949f51c88947";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5853fb3163f00_75d3ff66949f51c88947
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi Adam Watters,
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+https://localhost/account_activations/yjziFsxPVScFUKC1MzgVdg/edit?email=adamwatters11%40gmail.com
+
+
+----==_mimepart_5853fb3163f00_75d3ff66949f51c88947
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+<p>Hi Adam Watters,</p>
+<p>
+  Welcome to the Sample App! Click on the link below to activate your account:
+</p>
+<a href="https://localhost/account_activations/yjziFsxPVScFUKC1MzgVdg/edit?email=adamwatters11%40gmail.com">Activate</a>
+  </body>
+</html>
+
+----==_mimepart_5853fb3163f00_75d3ff66949f51c88947--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 864ms (ActiveRecord: 28.6ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 09:33:21 -0500
+Processing by StaticPagesController#home as HTML
+  [1m[36mSequence Load (0.4ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 09:33:26 -0500
+Processing by StaticPagesController#home as HTML
+  [1m[36mSequence Load (1.2ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (1.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 39ms (Views: 33.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/login" for ::1 at 2016-12-16 09:33:32 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-12-16 09:33:43 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y/tvhIzQDfRxi6uQt4mlM9PE66x+NhnedwvNd2Zv9lEC86U9kXKzyhjn4/BNOh/RqEoaxHYgLSsP60BNulEbzQ==", "session"=>{"email"=>"adamwatters11@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adamwatters11@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 100ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 09:33:43 -0500
+Processing by StaticPagesController#home as HTML
+  [1m[36mSequence Load (0.5ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 09:40:15 -0500
+Processing by StaticPagesController#home as HTML
+  [1m[36mSequence Load (9.2ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (1.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (30.2ms)
+  Rendered layouts/_shim.html.erb (1.2ms)
+  Rendered layouts/_header.html.erb (4.6ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 193ms (Views: 152.3ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/login" for ::1 at 2016-12-16 09:40:33 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_shim.html.erb (1.1ms)
+  Rendered layouts/_header.html.erb (3.3ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 86ms (Views: 83.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-12-16 09:40:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PN142fEvNcwvM8mIhY3MLbuqg2Rmu6EPhTa3m+oZEJpd1bJg7I2L8kZfgeh/PnbPwCRyDG6tlfr91jqhNif9Bg==", "session"=>{"email"=>"adamwatters11@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "adamwatters11@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 103ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 09:40:41 -0500
+Processing by StaticPagesController#home as HTML
+  [1m[36mSequence Load (1.1ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (0.7ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (2.3ms)
+Completed 200 OK in 117ms (Views: 109.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/login" for ::1 at 2016-12-16 09:41:27 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 49ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-12-16 09:41:35 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RLbURAnXF30/cMpVhN3ZUw0c9ODVbNwGkGiLVBlvc1glvh79FHWpQ1YcgjV+bmOxdpIFiN166PPoiAZuxVGexA==", "session"=>{"email"=>"example@railstutorial.org", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "example@railstutorial.org"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 97ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-16 09:41:36 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mSequence Exists (6.4ms)[0m  [1m[34mSELECT  1 AS one FROM "sequences" WHERE "sequences"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mSequence Load (1.0ms)[0m  [1m[34mSELECT "sequences".* FROM "sequences" WHERE "sequences"."user_id" = $1 ORDER BY "sequences"."created_at" DESC[0m  [["user_id", 1]]
+  [1m[36mPicture Load (0.7ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered shared/_sequence_form.html.erb (7.2ms)
+  Rendered users/_follow_form.html.erb (1.4ms)
+  Rendered users/show.html.erb within layouts/application (67.2ms)
+  Rendered layouts/_shim.html.erb (0.9ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 122ms (Views: 94.6ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 09:41:44 -0500
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSequence Load (0.5ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (0.7ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 69ms (Views: 63.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1" for ::1 at 2016-12-16 09:41:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mSequence Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "sequences" WHERE "sequences"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mSequence Load (0.6ms)[0m  [1m[34mSELECT "sequences".* FROM "sequences" WHERE "sequences"."user_id" = $1 ORDER BY "sequences"."created_at" DESC[0m  [["user_id", 1]]
+  [1m[36mPicture Load (0.5ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered shared/_sequence_form.html.erb (3.1ms)
+  Rendered users/_follow_form.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (26.3ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 81ms (Views: 66.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2016-12-16 10:38:50 -0500
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSequence Load (0.7ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 108ms (Views: 79.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/sequences/7" for ::1 at 2016-12-16 10:38:56 -0500
+Processing by SequencesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSequence Load (3.7ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" WHERE "sequences"."id" = $1 ORDER BY "sequences"."created_at" DESC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering sequences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (2.0ms)
+  Rendered shared/_picture_form.html.erb (15.4ms)
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."sequence_id" = $1[0m  [["sequence_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."sequence_id" = $1[0m  [["sequence_id", 7]]
+  [1m[36mPicture Load (0.7ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of pictures/_picture.html.erb [4 times] (13.9ms)
+  Rendered sequences/show.html.erb within layouts/application (61.3ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 118ms (Views: 92.5ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/pictures" for ::1 at 2016-12-16 10:39:13 -0500
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"65/mKsNnzLiECKK89FqkPULbsAWKXjMLWy84RKdj0LmKlyyT3sVyhu1k6twO6R7fOVVBbYJIB/4jz7V+e109JQ==", "sequence_id"=>"7", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fecdb828e38 @tempfile=#<Tempfile:/var/folders/th/5rghl8390kl7hwt726gzwql80000gn/T/RackMultipart20161216-1885-md8yuo.png>, @original_filename="Screen Shot 2016-12-12 at 3.59.32 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"Screen Shot 2016-12-12 at 3.59.32 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Post"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSequence Load (0.6ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" WHERE "sequences"."id" = $1 ORDER BY "sequences"."created_at" DESC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.5ms)[0m  [1m[32mINSERT INTO "pictures" ("sequence_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sequence_id", 7], ["image", "Screen_Shot_2016-12-12_at_3.59.32_PM.png"], ["created_at", 2016-12-16 15:39:14 UTC], ["updated_at", 2016-12-16 15:39:14 UTC]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/78/edit
+Completed 302 Found in 1151ms (ActiveRecord: 20.6ms)
+
+
+Started GET "/pictures/78/edit" for ::1 at 2016-12-16 10:39:14 -0500
+Processing by PicturesController#edit as HTML
+  Parameters: {"id"=>"78"}
+  [1m[36mPicture Load (0.8ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 ORDER BY "pictures"."created_at" ASC LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering pictures/edit.html.erb within layouts/application
+  Rendered pictures/edit.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 49ms (Views: 41.3ms | ActiveRecord: 1.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/milligram.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/pictures/78/edit" for ::1 at 2016-12-16 10:41:49 -0500
+Processing by PicturesController#edit as HTML
+  Parameters: {"id"=>"78"}
+  [1m[36mPicture Load (0.7ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 ORDER BY "pictures"."created_at" ASC LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering pictures/edit.html.erb within layouts/application
+  Rendered pictures/edit.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 45.2ms | ActiveRecord: 1.1ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/milligram.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/pictures/78/edit" for ::1 at 2016-12-16 11:11:03 -0500
+Processing by PicturesController#edit as HTML
+  Parameters: {"id"=>"78"}
+  [1m[36mPicture Load (2.0ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 ORDER BY "pictures"."created_at" ASC LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  Rendering pictures/edit.html.erb within layouts/application
+  Rendered pictures/edit.html.erb within layouts/application (36.8ms)
+  Rendered layouts/_shim.html.erb (0.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (7.8ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 556ms (Views: 502.4ms | ActiveRecord: 2.7ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/milligram.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2016-12-16 11:11:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mSequence Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "sequences" WHERE "sequences"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mSequence Load (0.7ms)[0m  [1m[34mSELECT "sequences".* FROM "sequences" WHERE "sequences"."user_id" = $1 ORDER BY "sequences"."created_at" DESC[0m  [["user_id", 1]]
+  [1m[36mPicture Load (1.0ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered shared/_error_messages.html.erb (1.0ms)
+  Rendered shared/_sequence_form.html.erb (9.3ms)
+  Rendered users/_follow_form.html.erb (1.1ms)
+  Rendered users/show.html.erb within layouts/application (63.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 130ms (Views: 97.3ms | ActiveRecord: 12.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/milligram.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/" for ::1 at 2016-12-16 11:11:10 -0500
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSequence Load (0.9ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" ORDER BY "sequences"."created_at" DESC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[36mPicture Load (0.7ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered static_pages/home.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 58ms (Views: 51.9ms | ActiveRecord: 2.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/milligram.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2016-12-16 11:11:11 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mSequence Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "sequences" WHERE "sequences"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mSequence Load (1.0ms)[0m  [1m[34mSELECT "sequences".* FROM "sequences" WHERE "sequences"."user_id" = $1 ORDER BY "sequences"."created_at" DESC[0m  [["user_id", 1]]
+  [1m[36mPicture Load (1.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  Rendered shared/_error_messages.html.erb (1.0ms)
+  Rendered shared/_sequence_form.html.erb (6.3ms)
+  Rendered users/_follow_form.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (31.9ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 81ms (Views: 66.4ms | ActiveRecord: 5.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/milligram.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/sequences/7" for ::1 at 2016-12-16 11:11:14 -0500
+Processing by SequencesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSequence Load (0.5ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" WHERE "sequences"."id" = $1 ORDER BY "sequences"."created_at" DESC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering sequences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered shared/_picture_form.html.erb (6.0ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."sequence_id" = $1[0m  [["sequence_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."sequence_id" = $1[0m  [["sequence_id", 7]]
+  [1m[36mPicture Load (0.6ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of pictures/_picture.html.erb [5 times] (7.0ms)
+  Rendered sequences/show.html.erb within layouts/application (34.9ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 83ms (Views: 71.4ms | ActiveRecord: 2.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/milligram.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/pictures" for ::1 at 2016-12-16 11:11:26 -0500
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cCwiPY+VgIJJoniumIHlkgXOoV40D9qJQcHZkpxm91MRJOiEkjc+vCDOMM5iMl9wfkBQNjwZ7nw5IVSoQFgazw==", "sequence_id"=>"7", "picture"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007fecd2bf7090 @tempfile=#<Tempfile:/var/folders/th/5rghl8390kl7hwt726gzwql80000gn/T/RackMultipart20161216-1885-5cmo2u.png>, @original_filename="Screen Shot 2016-12-12 at 3.59.24 PM.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"picture[image]\"; filename=\"Screen Shot 2016-12-12 at 3.59.24 PM.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Post"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSequence Load (0.6ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" WHERE "sequences"."id" = $1 ORDER BY "sequences"."created_at" DESC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (31.7ms)[0m  [1m[32mINSERT INTO "pictures" ("sequence_id", "image", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["sequence_id", 7], ["image", "Screen_Shot_2016-12-12_at_3.59.24_PM.png"], ["created_at", 2016-12-16 16:11:27 UTC], ["updated_at", 2016-12-16 16:11:27 UTC]]
+  [1m[35m (19.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pictures/79/edit
+Completed 302 Found in 1369ms (ActiveRecord: 52.3ms)
+
+
+Started GET "/pictures/79/edit" for ::1 at 2016-12-16 11:11:27 -0500
+Processing by PicturesController#edit as HTML
+  Parameters: {"id"=>"79"}
+  [1m[36mPicture Load (0.7ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 ORDER BY "pictures"."created_at" ASC LIMIT $2[0m  [["id", 79], ["LIMIT", 1]]
+  Rendering pictures/edit.html.erb within layouts/application
+  Rendered pictures/edit.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.5ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 65ms (Views: 58.7ms | ActiveRecord: 1.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/milligram.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started PATCH "/pictures/79" for ::1 at 2016-12-16 11:11:32 -0500
+Processing by PicturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X9b0pQ2uN3p8cTHv14wpe3AU1U3o0oKkr+Q7CmWEa4c+3j4cEAyJRBUdeY8tP5OZC5okJeDEtlHXBLYwubqGGw==", "picture"=>{"crop_x"=>"69.60000000000001", "crop_y"=>"10.949999999999989", "crop_w"=>"633.3", "crop_h"=>"633.3"}, "commit"=>"Crop", "id"=>"79"}
+  [1m[36mPicture Load (0.7ms)[0m  [1m[34mSELECT  "pictures".* FROM "pictures" WHERE "pictures"."id" = $1 ORDER BY "pictures"."created_at" ASC LIMIT $2[0m  [["id", 79], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mSequence Load (0.7ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" WHERE "sequences"."id" = $1 ORDER BY "sequences"."created_at" DESC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://localhost:3000/sequences/7
+Completed 302 Found in 1646ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/sequences/7" for ::1 at 2016-12-16 11:11:34 -0500
+Processing by SequencesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mSequence Load (0.6ms)[0m  [1m[34mSELECT  "sequences".* FROM "sequences" WHERE "sequences"."id" = $1 ORDER BY "sequences"."created_at" DESC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering sequences/show.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.1ms)
+  Rendered shared/_picture_form.html.erb (6.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."sequence_id" = $1[0m  [["sequence_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "pictures" WHERE "pictures"."sequence_id" = $1[0m  [["sequence_id", 7]]
+  [1m[36mPicture Load (0.4ms)[0m  [1m[34mSELECT "pictures".* FROM "pictures" WHERE "pictures"."sequence_id" = $1 ORDER BY "pictures"."created_at" ASC[0m  [["sequence_id", 7]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of pictures/_picture.html.erb [6 times] (10.1ms)
+  Rendered sequences/show.html.erb within layouts/application (39.3ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 99ms (Views: 88.3ms | ActiveRecord: 2.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/milligram.css.map"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.0.0.1) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.0.0.1) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
