@@ -1,19 +1,21 @@
-import Cropper from 'cropperjs'
+import Cropper from 'cropperjs-with-background-image-option'
 import docReady from 'doc-ready'
 
 const crop = () => {
   docReady(function() {
-    var $image = document.getElementById('cropbox');
-    var $x = document.getElementById('picture_crop_x');
-    var $y = document.getElementById('picture_crop_y');
-    var $w = document.getElementById('picture_crop_w');
-    var $h = document.getElementById('picture_crop_h');
+    const $image = document.getElementById('cropbox')
 
     if ($image) {
+
+      const previousImageUrl = $image.dataset.previousimageurl
+      const $x = document.getElementById('picture_crop_x')
+      const $y = document.getElementById('picture_crop_y')
+      const $w = document.getElementById('picture_crop_w')
+      const $h = document.getElementById('picture_crop_h')
       
       new Cropper($image, {
         viewMode: 1,
-        cropBoxBackgroundImage:'http://menu.harvis.sk/public/images/pizza.png',
+        cropBoxBackgroundImage: previousImageUrl,
         modal: false,
         background: false,
         dragMode: 'move',

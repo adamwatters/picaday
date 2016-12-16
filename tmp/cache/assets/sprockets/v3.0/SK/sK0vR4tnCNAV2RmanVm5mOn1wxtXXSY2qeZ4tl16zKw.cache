@@ -1,7 +1,0 @@
-I"a(function() {
-  jQuery(function() {
-    return $('#cropbox').Jcrop();
-  });
-
-}).call(this);
-:ET

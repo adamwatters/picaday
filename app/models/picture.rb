@@ -12,6 +12,15 @@ class Picture < ApplicationRecord
     image.recreate_versions! if crop_x.present?
   end
 
+  def previous_url
+    this_index = sequence.pictures.find_index(self)
+    if this_index === 0
+      false
+    else
+      sequence.pictures[this_index - 1].image_url(:thumb)
+    end
+  end
+
   private
 
   # Validates the size of an uploaded picture.

@@ -1,6 +1,8 @@
 <h1>Crop</h1>
 <div>
-  <%= image_tag @picture.image_url, id:"cropbox" %>
+  <%= image_tag @picture.image_url, id:"cropbox", data:{
+    previousImageUrl: @picture.previous_url ? @picture.previous_url : '' 
+    } %>
 </div>
 <%= form_for(@picture) do |f| %>
   <% %w[x y w h].each do |attribute| %>

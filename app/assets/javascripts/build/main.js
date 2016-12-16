@@ -23920,9 +23920,9 @@
 	  value: true
 	});
 
-	var _cropperjs = __webpack_require__(/*! cropperjs */ 194);
+	var _cropperjsWithBackgroundImageOption = __webpack_require__(/*! cropperjs-with-background-image-option */ 197);
 
-	var _cropperjs2 = _interopRequireDefault(_cropperjs);
+	var _cropperjsWithBackgroundImageOption2 = _interopRequireDefault(_cropperjsWithBackgroundImageOption);
 
 	var _docReady = __webpack_require__(/*! doc-ready */ 195);
 
@@ -23933,36 +23933,40 @@
 	var crop = function crop() {
 	  (0, _docReady2.default)(function () {
 	    var $image = document.getElementById('cropbox');
-	    var $x = document.getElementById('picture_crop_x');
-	    var $y = document.getElementById('picture_crop_y');
-	    var $w = document.getElementById('picture_crop_w');
-	    var $h = document.getElementById('picture_crop_h');
 
 	    if ($image) {
+	      (function () {
 
-	      new _cropperjs2.default($image, {
-	        viewMode: 1,
-	        cropBoxBackgroundImage: 'http://menu.harvis.sk/public/images/pizza.png',
-	        modal: false,
-	        background: false,
-	        dragMode: 'move',
-	        responsive: true,
-	        aspectRatio: 1 / 1,
-	        zoomable: true,
-	        scalable: false,
-	        rotatable: false,
-	        checkOrientation: false,
-	        movable: true,
-	        cropBoxMovable: false,
-	        cropBoxResizable: false,
-	        autoCropArea: 1,
-	        crop: function crop(e) {
-	          $x.value = e.detail.x;
-	          $y.value = e.detail.y;
-	          $w.value = e.detail.width;
-	          $h.value = e.detail.height;
-	        }
-	      });
+	        var previousImageUrl = $image.dataset.previousimageurl;
+	        var $x = document.getElementById('picture_crop_x');
+	        var $y = document.getElementById('picture_crop_y');
+	        var $w = document.getElementById('picture_crop_w');
+	        var $h = document.getElementById('picture_crop_h');
+
+	        new _cropperjsWithBackgroundImageOption2.default($image, {
+	          viewMode: 1,
+	          cropBoxBackgroundImage: previousImageUrl,
+	          modal: false,
+	          background: false,
+	          dragMode: 'move',
+	          responsive: true,
+	          aspectRatio: 1 / 1,
+	          zoomable: true,
+	          scalable: false,
+	          rotatable: false,
+	          checkOrientation: false,
+	          movable: true,
+	          cropBoxMovable: false,
+	          cropBoxResizable: false,
+	          autoCropArea: 1,
+	          crop: function crop(e) {
+	            $x.value = e.detail.x;
+	            $y.value = e.detail.y;
+	            $w.value = e.detail.width;
+	            $h.value = e.detail.height;
+	          }
+	        });
+	      })();
 	    }
 	  });
 	};
@@ -23970,20 +23974,201 @@
 	exports.default = crop;
 
 /***/ },
-/* 194 */
-/*!*************************************!*\
-  !*** ./~/cropperjs/dist/cropper.js ***!
-  \*************************************/
+/* 194 */,
+/* 195 */
+/*!**********************************!*\
+  !*** ./~/doc-ready/doc-ready.js ***!
+  \**********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	 * docReady v1.0.4
+	 * Cross browser DOMContentLoaded event emitter
+	 * MIT license
+	 */
+
+	/*jshint browser: true, strict: true, undef: true, unused: true*/
+	/*global define: false, require: false, module: false */
+
+	( function( window ) {
+
+	'use strict';
+
+	var document = window.document;
+	// collection of functions to be triggered on ready
+	var queue = [];
+
+	function docReady( fn ) {
+	  // throw out non-functions
+	  if ( typeof fn !== 'function' ) {
+	    return;
+	  }
+
+	  if ( docReady.isReady ) {
+	    // ready now, hit it
+	    fn();
+	  } else {
+	    // queue function when ready
+	    queue.push( fn );
+	  }
+	}
+
+	docReady.isReady = false;
+
+	// triggered on various doc ready events
+	function onReady( event ) {
+	  // bail if already triggered or IE8 document is not ready just yet
+	  var isIE8NotReady = event.type === 'readystatechange' && document.readyState !== 'complete';
+	  if ( docReady.isReady || isIE8NotReady ) {
+	    return;
+	  }
+
+	  trigger();
+	}
+
+	function trigger() {
+	  docReady.isReady = true;
+	  // process queue
+	  for ( var i=0, len = queue.length; i < len; i++ ) {
+	    var fn = queue[i];
+	    fn();
+	  }
+	}
+
+	function defineDocReady( eventie ) {
+	  // trigger ready if page is ready
+	  if ( document.readyState === 'complete' ) {
+	    trigger();
+	  } else {
+	    // listen for events
+	    eventie.bind( document, 'DOMContentLoaded', onReady );
+	    eventie.bind( document, 'readystatechange', onReady );
+	    eventie.bind( window, 'load', onReady );
+	  }
+
+	  return docReady;
+	}
+
+	// transport
+	if ( true ) {
+	  // AMD
+	  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! eventie/eventie */ 196) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (defineDocReady), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else if ( typeof exports === 'object' ) {
+	  module.exports = defineDocReady( require('eventie') );
+	} else {
+	  // browser global
+	  window.docReady = defineDocReady( window.eventie );
+	}
+
+	})( window );
+
+
+/***/ },
+/* 196 */
+/*!******************************!*\
+  !*** ./~/eventie/eventie.js ***!
+  \******************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	 * eventie v1.0.6
+	 * event binding helper
+	 *   eventie.bind( elem, 'click', myFn )
+	 *   eventie.unbind( elem, 'click', myFn )
+	 * MIT license
+	 */
+
+	/*jshint browser: true, undef: true, unused: true */
+	/*global define: false, module: false */
+
+	( function( window ) {
+
+	'use strict';
+
+	var docElem = document.documentElement;
+
+	var bind = function() {};
+
+	function getIEEvent( obj ) {
+	  var event = window.event;
+	  // add event.target
+	  event.target = event.target || event.srcElement || obj;
+	  return event;
+	}
+
+	if ( docElem.addEventListener ) {
+	  bind = function( obj, type, fn ) {
+	    obj.addEventListener( type, fn, false );
+	  };
+	} else if ( docElem.attachEvent ) {
+	  bind = function( obj, type, fn ) {
+	    obj[ type + fn ] = fn.handleEvent ?
+	      function() {
+	        var event = getIEEvent( obj );
+	        fn.handleEvent.call( fn, event );
+	      } :
+	      function() {
+	        var event = getIEEvent( obj );
+	        fn.call( obj, event );
+	      };
+	    obj.attachEvent( "on" + type, obj[ type + fn ] );
+	  };
+	}
+
+	var unbind = function() {};
+
+	if ( docElem.removeEventListener ) {
+	  unbind = function( obj, type, fn ) {
+	    obj.removeEventListener( type, fn, false );
+	  };
+	} else if ( docElem.detachEvent ) {
+	  unbind = function( obj, type, fn ) {
+	    obj.detachEvent( "on" + type, obj[ type + fn ] );
+	    try {
+	      delete obj[ type + fn ];
+	    } catch ( err ) {
+	      // can't delete window object properties
+	      obj[ type + fn ] = undefined;
+	    }
+	  };
+	}
+
+	var eventie = {
+	  bind: bind,
+	  unbind: unbind
+	};
+
+	// ----- module definition ----- //
+
+	if ( true ) {
+	  // AMD
+	  !(__WEBPACK_AMD_DEFINE_FACTORY__ = (eventie), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else if ( typeof exports === 'object' ) {
+	  // CommonJS
+	  module.exports = eventie;
+	} else {
+	  // browser global
+	  window.eventie = eventie;
+	}
+
+	})( window );
+
+
+/***/ },
+/* 197 */
+/*!******************************************************************!*\
+  !*** ./~/cropperjs-with-background-image-option/dist/cropper.js ***!
+  \******************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
 	 * Cropper.js v1.0.0-alpha
-	 * https://github.com/fengyuanchen/cropperjs
+	 * https://github.com/adamwatters/cropperjs
 	 *
-	 * Copyright (c) 2016 Fengyuan Chen
+	 * Copyright (c) 2016 Adam Watters
 	 * Released under the MIT license
 	 *
-	 * Date: 2016-12-16T20:47:39.385Z
+	 * Date: 2016-12-16T21:43:13.720Z
 	 */
 
 	(function (global, factory) {
@@ -27498,186 +27683,6 @@
 
 	})));
 	//# sourceMappingURL=cropper.js.map
-
-
-/***/ },
-/* 195 */
-/*!**********************************!*\
-  !*** ./~/doc-ready/doc-ready.js ***!
-  \**********************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	 * docReady v1.0.4
-	 * Cross browser DOMContentLoaded event emitter
-	 * MIT license
-	 */
-
-	/*jshint browser: true, strict: true, undef: true, unused: true*/
-	/*global define: false, require: false, module: false */
-
-	( function( window ) {
-
-	'use strict';
-
-	var document = window.document;
-	// collection of functions to be triggered on ready
-	var queue = [];
-
-	function docReady( fn ) {
-	  // throw out non-functions
-	  if ( typeof fn !== 'function' ) {
-	    return;
-	  }
-
-	  if ( docReady.isReady ) {
-	    // ready now, hit it
-	    fn();
-	  } else {
-	    // queue function when ready
-	    queue.push( fn );
-	  }
-	}
-
-	docReady.isReady = false;
-
-	// triggered on various doc ready events
-	function onReady( event ) {
-	  // bail if already triggered or IE8 document is not ready just yet
-	  var isIE8NotReady = event.type === 'readystatechange' && document.readyState !== 'complete';
-	  if ( docReady.isReady || isIE8NotReady ) {
-	    return;
-	  }
-
-	  trigger();
-	}
-
-	function trigger() {
-	  docReady.isReady = true;
-	  // process queue
-	  for ( var i=0, len = queue.length; i < len; i++ ) {
-	    var fn = queue[i];
-	    fn();
-	  }
-	}
-
-	function defineDocReady( eventie ) {
-	  // trigger ready if page is ready
-	  if ( document.readyState === 'complete' ) {
-	    trigger();
-	  } else {
-	    // listen for events
-	    eventie.bind( document, 'DOMContentLoaded', onReady );
-	    eventie.bind( document, 'readystatechange', onReady );
-	    eventie.bind( window, 'load', onReady );
-	  }
-
-	  return docReady;
-	}
-
-	// transport
-	if ( true ) {
-	  // AMD
-	  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! eventie/eventie */ 196) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (defineDocReady), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else if ( typeof exports === 'object' ) {
-	  module.exports = defineDocReady( require('eventie') );
-	} else {
-	  // browser global
-	  window.docReady = defineDocReady( window.eventie );
-	}
-
-	})( window );
-
-
-/***/ },
-/* 196 */
-/*!******************************!*\
-  !*** ./~/eventie/eventie.js ***!
-  \******************************/
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	 * eventie v1.0.6
-	 * event binding helper
-	 *   eventie.bind( elem, 'click', myFn )
-	 *   eventie.unbind( elem, 'click', myFn )
-	 * MIT license
-	 */
-
-	/*jshint browser: true, undef: true, unused: true */
-	/*global define: false, module: false */
-
-	( function( window ) {
-
-	'use strict';
-
-	var docElem = document.documentElement;
-
-	var bind = function() {};
-
-	function getIEEvent( obj ) {
-	  var event = window.event;
-	  // add event.target
-	  event.target = event.target || event.srcElement || obj;
-	  return event;
-	}
-
-	if ( docElem.addEventListener ) {
-	  bind = function( obj, type, fn ) {
-	    obj.addEventListener( type, fn, false );
-	  };
-	} else if ( docElem.attachEvent ) {
-	  bind = function( obj, type, fn ) {
-	    obj[ type + fn ] = fn.handleEvent ?
-	      function() {
-	        var event = getIEEvent( obj );
-	        fn.handleEvent.call( fn, event );
-	      } :
-	      function() {
-	        var event = getIEEvent( obj );
-	        fn.call( obj, event );
-	      };
-	    obj.attachEvent( "on" + type, obj[ type + fn ] );
-	  };
-	}
-
-	var unbind = function() {};
-
-	if ( docElem.removeEventListener ) {
-	  unbind = function( obj, type, fn ) {
-	    obj.removeEventListener( type, fn, false );
-	  };
-	} else if ( docElem.detachEvent ) {
-	  unbind = function( obj, type, fn ) {
-	    obj.detachEvent( "on" + type, obj[ type + fn ] );
-	    try {
-	      delete obj[ type + fn ];
-	    } catch ( err ) {
-	      // can't delete window object properties
-	      obj[ type + fn ] = undefined;
-	    }
-	  };
-	}
-
-	var eventie = {
-	  bind: bind,
-	  unbind: unbind
-	};
-
-	// ----- module definition ----- //
-
-	if ( true ) {
-	  // AMD
-	  !(__WEBPACK_AMD_DEFINE_FACTORY__ = (eventie), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	} else if ( typeof exports === 'object' ) {
-	  // CommonJS
-	  module.exports = eventie;
-	} else {
-	  // browser global
-	  window.eventie = eventie;
-	}
-
-	})( window );
 
 
 /***/ }
