@@ -1,6 +1,7 @@
 import Cropper from 'cropperjs'
 import docReady from 'doc-ready'
 
+const test = 'test'
 
 const crop = () => {
   docReady(function() {
@@ -14,6 +15,7 @@ const crop = () => {
       
       new Cropper($image, {
         viewMode: 1,
+        cropBoxBackgroundImage:'http://menu.harvis.sk/public/images/pizza.png',
         modal: false,
         background: false,
         dragMode: 'move',
@@ -21,12 +23,12 @@ const crop = () => {
         aspectRatio: 1 / 1,
         zoomable: true,
         scalable: false,
-        rotatable: true,
+        rotatable: false,
+        checkOrientation: false,
         movable: true,
         cropBoxMovable: false,
         cropBoxResizable: false,
         autoCropArea: 1,
-        minCanvasHeight: 1,
         crop: function(e) {
           $x.value = e.detail.x;
           $y.value = e.detail.y;

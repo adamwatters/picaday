@@ -35,23 +35,6 @@ function removeFileNameHash(fileName) {
     .replace(/\/?(.*)(\.\w+)(\.js|\.css)/, (match, p1, p2, p3) => p1 + p3);
 }
 
-// Input: 1024, 2048
-// Output: "(+1 KB)"
-function getDifferenceLabel(currentSize, previousSize) {
-  var FIFTY_KILOBYTES = 1024 * 50;
-  var difference = currentSize - previousSize;
-  var fileSize = !Number.isNaN(difference) ? filesize(difference) : 0;
-  if (difference >= FIFTY_KILOBYTES) {
-    return chalk.red('+' + fileSize);
-  } else if (difference < FIFTY_KILOBYTES && difference > 0) {
-    return chalk.yellow('+' + fileSize);
-  } else if (difference < 0) {
-    return chalk.green(fileSize);
-  } else {
-    return '';
-  }
-}
-
 // First, read the current file sizes in build directory.
 // This lets us display how much they changed later.
 recursive(paths.appDev, (err, fileNames) => {
@@ -90,9 +73,11 @@ function build(previousSizeMap) {
     poll: true // use polling instead of native watchers
     // pass a number to set the polling interval
   }, (err, stats) => {
-    if (!err && !stats.compilation.errors.length && !process.env.CI && stats.compilation.warnings.length) {
+    if (!err && !stats.compilation.errors.length ) {
+      if (stats.compilation.warnings.length) {
+        printErrors('Warnings present', stats.compilation.warnings);
+      }
       console.log(chalk.green('Compiled successfully.'));
-      console.log();
     } else {
         if (err) {
           printErrors('Failed to compile.', [err]);

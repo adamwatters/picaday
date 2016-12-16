@@ -1321,7 +1321,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _crop = __webpack_require__(/*! ./crop */ 196);
+	var _crop = __webpack_require__(/*! ./crop */ 193);
 
 	var _crop2 = _interopRequireDefault(_crop);
 
@@ -23909,6 +23909,70 @@
 
 /***/ },
 /* 193 */
+/*!*********************!*\
+  !*** ./src/crop.js ***!
+  \*********************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _cropperjs = __webpack_require__(/*! cropperjs */ 194);
+
+	var _cropperjs2 = _interopRequireDefault(_cropperjs);
+
+	var _docReady = __webpack_require__(/*! doc-ready */ 195);
+
+	var _docReady2 = _interopRequireDefault(_docReady);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var test = 'test';
+
+	var crop = function crop() {
+	  (0, _docReady2.default)(function () {
+	    var $image = document.getElementById('cropbox');
+	    var $x = document.getElementById('picture_crop_x');
+	    var $y = document.getElementById('picture_crop_y');
+	    var $w = document.getElementById('picture_crop_w');
+	    var $h = document.getElementById('picture_crop_h');
+
+	    if ($image) {
+
+	      new _cropperjs2.default($image, {
+	        viewMode: 1,
+	        cropBoxBackgroundImage: 'http://menu.harvis.sk/public/images/pizza.png',
+	        modal: false,
+	        background: false,
+	        dragMode: 'move',
+	        responsive: true,
+	        aspectRatio: 1 / 1,
+	        zoomable: true,
+	        scalable: false,
+	        rotatable: false,
+	        checkOrientation: false,
+	        movable: true,
+	        cropBoxMovable: false,
+	        cropBoxResizable: false,
+	        autoCropArea: 1,
+	        crop: function crop(e) {
+	          $x.value = e.detail.x;
+	          $y.value = e.detail.y;
+	          $w.value = e.detail.width;
+	          $h.value = e.detail.height;
+	        }
+	      });
+	    }
+	  });
+	};
+
+	exports.default = crop;
+
+/***/ },
+/* 194 */
 /*!*************************************!*\
   !*** ./~/cropperjs/dist/cropper.js ***!
   \*************************************/
@@ -23921,7 +23985,7 @@
 	 * Copyright (c) 2016 Fengyuan Chen
 	 * Released under the MIT license
 	 *
-	 * Date: 2016-12-04T14:06:47.119Z
+	 * Date: 2016-12-16T20:47:39.385Z
 	 */
 
 	(function (global, factory) {
@@ -24008,6 +24072,9 @@
 
 	  // Toggle drag mode between "crop" and "move" when click twice on the cropper
 	  toggleDragModeOnDblclick: true,
+
+	  // Add a URL to use as background for crop-box
+	  cropBoxBackgroundImage: '',
 
 	  // Size limitation
 	  minCanvasWidth: 0,
@@ -27331,6 +27398,11 @@
 	        addClass(face, 'cropper-invisible');
 	      }
 
+	      if (options.cropBoxBackgroundImage) {
+	        addClass(face, 'cropper-has-background-image');
+	        setStyle(face, { backgroundImage: 'url(' + options.cropBoxBackgroundImage + ')' });
+	      }
+
 	      if (options.cropBoxMovable) {
 	        addClass(face, 'cropper-move');
 	        setData$1(face, 'action', 'all');
@@ -27431,7 +27503,7 @@
 
 
 /***/ },
-/* 194 */
+/* 195 */
 /*!**********************************!*\
   !*** ./~/doc-ready/doc-ready.js ***!
   \**********************************/
@@ -27508,7 +27580,7 @@
 	// transport
 	if ( true ) {
 	  // AMD
-	  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! eventie/eventie */ 195) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (defineDocReady), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [ __webpack_require__(/*! eventie/eventie */ 196) ], __WEBPACK_AMD_DEFINE_FACTORY__ = (defineDocReady), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else if ( typeof exports === 'object' ) {
 	  module.exports = defineDocReady( require('eventie') );
 	} else {
@@ -27520,7 +27592,7 @@
 
 
 /***/ },
-/* 195 */
+/* 196 */
 /*!******************************!*\
   !*** ./~/eventie/eventie.js ***!
   \******************************/
@@ -27609,67 +27681,6 @@
 
 	})( window );
 
-
-/***/ },
-/* 196 */
-/*!*********************!*\
-  !*** ./src/crop.js ***!
-  \*********************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _cropperjs = __webpack_require__(/*! cropperjs */ 193);
-
-	var _cropperjs2 = _interopRequireDefault(_cropperjs);
-
-	var _docReady = __webpack_require__(/*! doc-ready */ 194);
-
-	var _docReady2 = _interopRequireDefault(_docReady);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var crop = function crop() {
-	  (0, _docReady2.default)(function () {
-	    var $image = document.getElementById('cropbox');
-	    var $x = document.getElementById('picture_crop_x');
-	    var $y = document.getElementById('picture_crop_y');
-	    var $w = document.getElementById('picture_crop_w');
-	    var $h = document.getElementById('picture_crop_h');
-
-	    if ($image) {
-
-	      new _cropperjs2.default($image, {
-	        viewMode: 1,
-	        modal: false,
-	        background: false,
-	        dragMode: 'move',
-	        responsive: true,
-	        aspectRatio: 1 / 1,
-	        zoomable: true,
-	        scalable: false,
-	        rotatable: true,
-	        movable: true,
-	        cropBoxMovable: false,
-	        cropBoxResizable: false,
-	        autoCropArea: 1,
-	        minCanvasHeight: 1,
-	        crop: function crop(e) {
-	          $x.value = e.detail.x;
-	          $y.value = e.detail.y;
-	          $w.value = e.detail.width;
-	          $h.value = e.detail.height;
-	        }
-	      });
-	    }
-	  });
-	};
-
-	exports.default = crop;
 
 /***/ }
 /******/ ]);
