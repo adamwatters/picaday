@@ -1,8 +1,6 @@
 import Cropper from 'cropperjs'
 import docReady from 'doc-ready'
 
-const test = 'test'
-
 const crop = () => {
   docReady(function() {
     var $image = document.getElementById('cropbox');

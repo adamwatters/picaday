@@ -23930,8 +23930,6 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var test = 'test';
-
 	var crop = function crop() {
 	  (0, _docReady2.default)(function () {
 	    var $image = document.getElementById('cropbox');
