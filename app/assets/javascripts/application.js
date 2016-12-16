@@ -11,4 +11,3 @@
 // about supported directives.
 //
 //= require build/main
-//= require pictures

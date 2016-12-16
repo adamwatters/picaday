@@ -1321,13 +1321,9 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _cropperjs = __webpack_require__(/*! cropperjs */ 193);
+	var _crop = __webpack_require__(/*! ./crop */ 196);
 
-	var _cropperjs2 = _interopRequireDefault(_cropperjs);
-
-	var _docReady = __webpack_require__(/*! doc-ready */ 194);
-
-	var _docReady2 = _interopRequireDefault(_docReady);
+	var _crop2 = _interopRequireDefault(_crop);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1339,29 +1335,7 @@
 	  _reactDom2.default.render(_react2.default.createElement(_App2.default, { sequences: sequences }), root);
 	}
 
-	(0, _docReady2.default)(function () {
-	  var $image = document.getElementById('cropbox');
-	  var $x = document.getElementById('#picture_crop_x');
-	  var $y = document.getElementById('#picture_crop_y');
-	  var $w = document.getElementById('#picture_crop_w');
-	  var $h = document.getElementById('#picture_crop_h');
-
-	  if ($image) {
-	    new _cropperjs2.default($image, {
-	      aspectRatio: 1 / 1,
-	      zoomable: false,
-	      scalable: false,
-	      rotatable: false,
-	      movable: false,
-	      crop: function crop(e) {
-	        $x.val(e.detail.x);
-	        $y.val(e.detail.y);
-	        $w.val(e.detail.width);
-	        $h.val(e.detail.height);
-	      }
-	    });
-	  }
-	});
+	(0, _crop2.default)();
 
 /***/ },
 /* 9 */
@@ -27635,6 +27609,67 @@
 
 	})( window );
 
+
+/***/ },
+/* 196 */
+/*!*********************!*\
+  !*** ./src/crop.js ***!
+  \*********************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _cropperjs = __webpack_require__(/*! cropperjs */ 193);
+
+	var _cropperjs2 = _interopRequireDefault(_cropperjs);
+
+	var _docReady = __webpack_require__(/*! doc-ready */ 194);
+
+	var _docReady2 = _interopRequireDefault(_docReady);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var crop = function crop() {
+	  (0, _docReady2.default)(function () {
+	    var $image = document.getElementById('cropbox');
+	    var $x = document.getElementById('picture_crop_x');
+	    var $y = document.getElementById('picture_crop_y');
+	    var $w = document.getElementById('picture_crop_w');
+	    var $h = document.getElementById('picture_crop_h');
+
+	    if ($image) {
+
+	      new _cropperjs2.default($image, {
+	        viewMode: 1,
+	        modal: false,
+	        background: false,
+	        dragMode: 'move',
+	        responsive: true,
+	        aspectRatio: 1 / 1,
+	        zoomable: true,
+	        scalable: false,
+	        rotatable: true,
+	        movable: true,
+	        cropBoxMovable: false,
+	        cropBoxResizable: false,
+	        autoCropArea: 1,
+	        minCanvasHeight: 1,
+	        crop: function crop(e) {
+	          $x.value = e.detail.x;
+	          $y.value = e.detail.y;
+	          $w.value = e.detail.width;
+	          $h.value = e.detail.height;
+	        }
+	      });
+	    }
+	  });
+	};
+
+	exports.default = crop;
 
 /***/ }
 /******/ ]);
