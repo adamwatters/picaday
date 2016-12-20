@@ -16,6 +16,7 @@ const crop = () => {
       new Cropper($image, {
         viewMode: 1,
         cropBoxBackgroundImage: previousImageUrl,
+        cropBoxBackgroundOpacity: .5,
         modal: false,
         background: false,
         dragMode: 'move',

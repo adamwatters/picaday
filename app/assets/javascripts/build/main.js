@@ -23946,6 +23946,7 @@
 	        new _cropperjsWithBackgroundImageOption2.default($image, {
 	          viewMode: 1,
 	          cropBoxBackgroundImage: previousImageUrl,
+	          cropBoxBackgroundOpacity: .5,
 	          modal: false,
 	          background: false,
 	          dragMode: 'move',
@@ -23987,7 +23988,7 @@
 	 * Copyright (c) 2016 Adam Watters
 	 * Released under the MIT license
 	 *
-	 * Date: 2016-12-16T21:43:13.720Z
+	 * Date: 2016-12-20T16:29:04.989Z
 	 */
 
 	(function (global, factory) {
@@ -24077,6 +24078,8 @@
 
 	  // Add a URL to use as background for crop-box
 	  cropBoxBackgroundImage: '',
+
+	  cropBoxBackgroundOpacity: NaN,
 
 	  // Size limitation
 	  minCanvasWidth: 0,
@@ -27403,6 +27406,10 @@
 	      if (options.cropBoxBackgroundImage) {
 	        addClass(face, 'cropper-has-background-image');
 	        setStyle(face, { backgroundImage: 'url(' + options.cropBoxBackgroundImage + ')' });
+	      }
+
+	      if (options.cropBoxBackgroundOpacity) {
+	        setStyle(face, { opacity: options.cropBoxBackgroundOpacity });
 	      }
 
 	      if (options.cropBoxMovable) {
