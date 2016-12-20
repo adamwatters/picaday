@@ -23,7 +23,7 @@ const crop = () => {
         aspectRatio: 1 / 1,
         zoomable: true,
         scalable: false,
-        rotatable: false,
+        rotatable: true,
         checkOrientation: false,
         movable: true,
         cropBoxMovable: false,

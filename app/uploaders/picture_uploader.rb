@@ -28,6 +28,7 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   process :resize_to_limit => [800, 800]
+  process :auto_orient
   #
   # def scale(width, height)
   #   # do something
@@ -42,6 +43,7 @@ class PictureUploader < CarrierWave::Uploader::Base
   def crop
     if model.crop_x.present?
       manipulate! do |img|
+        img.strip
         x = model.crop_x.to_i
         y = model.crop_y.to_i
         w = model.crop_w.to_i
@@ -49,6 +51,14 @@ class PictureUploader < CarrierWave::Uploader::Base
         img.crop("#{w}x#{h}+#{x}+#{y}")
         img
       end
+    end
+  end
+
+  def auto_orient
+    puts 'orienting image'
+    manipulate! do |img|
+      img.auto_orient
+      img
     end
   end
 
