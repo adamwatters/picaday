@@ -23337,12 +23337,7 @@
 	          { className: 'pictures' },
 	          pictures
 	        ),
-	        numberOfPictures > 1 && _react2.default.createElement(_Slider2.default, { value: value, handleChange: this.handleSliderChange, numberOfPictures: numberOfPictures }),
-	        _react2.default.createElement(
-	          'a',
-	          { href: link },
-	          'Add more photos to - ' + description
-	        )
+	        numberOfPictures > 1 && _react2.default.createElement(_Slider2.default, { value: value, handleChange: this.handleSliderChange, numberOfPictures: numberOfPictures })
 	      );
 	    }
 	  }]);

@@ -63,6 +63,13 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  def sequences
+    @user = current_user
+    @sequences  = @user.sequences
+    @new_sequence = @sequences.build
+    render 'select_sequence'
+  end
+
   private
 
   def user_params

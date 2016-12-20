@@ -2,6 +2,17 @@ class SequencesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user,   only: [:destroy]
 
+  def new
+    @sequence = current_user.sequences.build
+    if @sequence.save
+      @picture  = @sequence.pictures.build
+      @pictures = @sequence.pictures
+      render :show
+    else
+      redirect_to root_url
+    end
+  end
+
   def create
     @sequence = current_user.sequences.build(sequence_params)
     if @sequence.save

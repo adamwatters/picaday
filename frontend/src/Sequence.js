@@ -49,7 +49,6 @@ class Sequence extends Component {
         {numberOfPictures > 1 &&
           <Slider value={value} handleChange={this.handleSliderChange} numberOfPictures={numberOfPictures}/>
         }
-        <a href={link}>{`Add more photos to - ${description}`}</a>
       </div>
     );
   }

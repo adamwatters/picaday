@@ -23,6 +23,16 @@
     text-decoration: none;
   }
 
+  .navigation-icon-container {
+    position: relative;
+  }
+
+  .navigation-icon {
+    fill: currentcolor;
+    position: relative;
+    top: 6px;
+  }
+
   .navigation-item {
     float: left;
     margin-bottom: 0;

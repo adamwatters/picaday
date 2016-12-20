@@ -3,7 +3,6 @@ class Sequence < ApplicationRecord
   has_many :pictures, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
-  validates :description, presence: true, length: { maximum: 140 }
 
   def self.feed_for(user)
     take(5)
