@@ -6,7 +6,6 @@ class Sequence extends Component {
 
   static propTypes = {
     pictureURLs: PropTypes.arrayOf(React.PropTypes.string).isRequired,
-    description: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired
   }
 
@@ -24,7 +23,7 @@ class Sequence extends Component {
   }
 
   render() {
-    const { pictureURLs, description, link } = this.props
+    const { pictureURLs } = this.props
     const numberOfPictures = pictureURLs.length
     const { value } = this.state;
     const ceil = Math.ceil(value);
@@ -33,11 +32,11 @@ class Sequence extends Component {
     var pictures = pictureURLs.map(function(url, index){
       const first = index === 0
       if (floor === index) {
-        return <Picture opacity={1} first={first} key={description + '-' + index} url={url} />
+        return <Picture opacity={1} first={first} key={index} url={url} />
       } else if (ceil === index) {
-        return <Picture opacity={1 - (ceil - value)} first={first} key={description + '-' + index} url={url} />
+        return <Picture opacity={1 - (ceil - value)} first={first} key={index} url={url} />
       } else {
-        return <Picture opacity={0} first={first} key={description + '-' + index} url={url} />
+        return <Picture opacity={0} first={first} key={index} url={url} />
       }
     })
 

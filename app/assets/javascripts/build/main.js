@@ -23227,8 +23227,7 @@
 	    key: 'render',
 	    value: function render() {
 	      var sequences = this.props.sequences.map(function (s, i) {
-	        return _react2.default.createElement(_Sequence2.default, { key: s.description,
-	          description: s.description,
+	        return _react2.default.createElement(_Sequence2.default, { key: i,
 	          link: s.link,
 	          pictureURLs: s.pictureURLs });
 	      });
@@ -23307,10 +23306,7 @@
 	  _createClass(Sequence, [{
 	    key: 'render',
 	    value: function render() {
-	      var _props = this.props,
-	          pictureURLs = _props.pictureURLs,
-	          description = _props.description,
-	          link = _props.link;
+	      var pictureURLs = this.props.pictureURLs;
 
 	      var numberOfPictures = pictureURLs.length;
 	      var value = this.state.value;
@@ -23321,11 +23317,11 @@
 	      var pictures = pictureURLs.map(function (url, index) {
 	        var first = index === 0;
 	        if (floor === index) {
-	          return _react2.default.createElement(_Picture2.default, { opacity: 1, first: first, key: description + '-' + index, url: url });
+	          return _react2.default.createElement(_Picture2.default, { opacity: 1, first: first, key: index, url: url });
 	        } else if (ceil === index) {
-	          return _react2.default.createElement(_Picture2.default, { opacity: 1 - (ceil - value), first: first, key: description + '-' + index, url: url });
+	          return _react2.default.createElement(_Picture2.default, { opacity: 1 - (ceil - value), first: first, key: index, url: url });
 	        } else {
-	          return _react2.default.createElement(_Picture2.default, { opacity: 0, first: first, key: description + '-' + index, url: url });
+	          return _react2.default.createElement(_Picture2.default, { opacity: 0, first: first, key: index, url: url });
 	        }
 	      });
 
@@ -23347,7 +23343,6 @@
 
 	Sequence.propTypes = {
 	  pictureURLs: _react.PropTypes.arrayOf(_react2.default.PropTypes.string).isRequired,
-	  description: _react.PropTypes.string.isRequired,
 	  link: _react.PropTypes.string.isRequired
 	};
 		exports.default = Sequence;
