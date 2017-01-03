@@ -33,9 +33,10 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+    @sequence = @picture.sequence
     @picture.destroy
     flash[:success] = "Picture deleted"
-    redirect_to request.referrer || root_url
+    redirect_to @sequence
   end
 
   private
