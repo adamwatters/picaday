@@ -1317,9 +1317,9 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _App = __webpack_require__(/*! ./App */ 185);
+	var _Sequences = __webpack_require__(/*! ./Sequences */ 197);
 
-	var _App2 = _interopRequireDefault(_App);
+	var _Sequences2 = _interopRequireDefault(_Sequences);
 
 	var _crop = __webpack_require__(/*! ./crop */ 193);
 
@@ -1330,9 +1330,9 @@
 	var root = document.getElementById('root');
 
 	if (root) {
-	  var sequences = JSON.parse(root.dataset.props);
+	  var sequencesData = JSON.parse(root.dataset.props);
 
-	  _reactDom2.default.render(_react2.default.createElement(_App2.default, { sequences: sequences }), root);
+	  _reactDom2.default.render(_react2.default.createElement(_Sequences2.default, { sequences: sequencesData }), root);
 	}
 
 	(0, _crop2.default)();
@@ -23184,71 +23184,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 11)))
 
 /***/ },
-/* 185 */
-/*!********************!*\
-  !*** ./src/App.js ***!
-  \********************/
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(/*! react */ 9);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Sequence = __webpack_require__(/*! ./Sequence */ 186);
-
-	var _Sequence2 = _interopRequireDefault(_Sequence);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var App = function (_Component) {
-	  _inherits(App, _Component);
-
-	  function App() {
-	    _classCallCheck(this, App);
-
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-	  }
-
-	  _createClass(App, [{
-	    key: 'render',
-	    value: function render() {
-	      var sequences = this.props.sequences.map(function (s, i) {
-	        return _react2.default.createElement(_Sequence2.default, { key: i,
-	          link: s.link,
-	          pictureURLs: s.pictureURLs });
-	      });
-
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        sequences
-	      );
-	    }
-	  }]);
-
-	  return App;
-	}(_react.Component);
-
-	App.propTypes = {
-	  sequences: _react.PropTypes.arrayOf(_react2.default.PropTypes.object).isRequired
-	};
-		exports.default = App;
-
-/***/ },
+/* 185 */,
 /* 186 */
 /*!*************************!*\
   !*** ./src/Sequence.js ***!
@@ -23275,6 +23211,10 @@
 
 	var _Picture2 = _interopRequireDefault(_Picture);
 
+	var _Streak = __webpack_require__(/*! ./Streak */ 198);
+
+	var _Streak2 = _interopRequireDefault(_Streak);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23298,7 +23238,7 @@
 	    };
 
 	    _this.state = {
-	      value: 0 /** Start value **/
+	      value: 0
 	    };
 	    return _this;
 	  }
@@ -23306,7 +23246,12 @@
 	  _createClass(Sequence, [{
 	    key: 'render',
 	    value: function render() {
-	      var pictureURLs = this.props.pictureURLs;
+	      var _props = this.props,
+	          pictureURLs = _props.pictureURLs,
+	          userName = _props.userName,
+	          userLink = _props.userLink,
+	          showUserInfo = _props.showUserInfo,
+	          streak = _props.streak;
 
 	      var numberOfPictures = pictureURLs.length;
 	      var value = this.state.value;
@@ -23328,6 +23273,20 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'sequence' },
+	        showUserInfo ? _react2.default.createElement(
+	          'div',
+	          { className: 'sequence_info clearfix' },
+	          _react2.default.createElement(
+	            'a',
+	            { href: userLink },
+	            userName
+	          ),
+	          _react2.default.createElement(_Streak2.default, { streak: streak })
+	        ) : _react2.default.createElement(
+	          'div',
+	          { className: 'sequence_info clearfix' },
+	          _react2.default.createElement(_Streak2.default, { streak: streak })
+	        ),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'pictures' },
@@ -23343,7 +23302,10 @@
 
 	Sequence.propTypes = {
 	  pictureURLs: _react.PropTypes.arrayOf(_react2.default.PropTypes.string).isRequired,
-	  link: _react.PropTypes.string.isRequired
+	  userName: _react.PropTypes.string.isRequired,
+	  userLink: _react.PropTypes.string.isRequired,
+	  showUserInfo: _react.PropTypes.bool.isRequired,
+	  streak: _react.PropTypes.arrayOf(_react2.default.PropTypes.number).isRequired
 	};
 		exports.default = Sequence;
 
@@ -27680,6 +27642,186 @@
 
 	})( window );
 
+
+/***/ },
+/* 197 */
+/*!**************************!*\
+  !*** ./src/Sequences.js ***!
+  \**************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(/*! react */ 9);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Sequence = __webpack_require__(/*! ./Sequence */ 186);
+
+	var _Sequence2 = _interopRequireDefault(_Sequence);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Sequences = function (_Component) {
+	  _inherits(Sequences, _Component);
+
+	  function Sequences() {
+	    _classCallCheck(this, Sequences);
+
+	    return _possibleConstructorReturn(this, (Sequences.__proto__ || Object.getPrototypeOf(Sequences)).apply(this, arguments));
+	  }
+
+	  _createClass(Sequences, [{
+	    key: 'render',
+	    value: function render() {
+	      var sequences = this.props.sequences.filter(function (s) {
+	        return s.pictureURLs.length > 0;
+	      }).map(function (s, i) {
+	        return _react2.default.createElement(_Sequence2.default, { key: i,
+	          userLink: s.userLink,
+	          userName: s.userName,
+	          showUserInfo: s.showUserInfo,
+	          streak: s.streak,
+	          pictureURLs: s.pictureURLs });
+	      });
+
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        sequences
+	      );
+	    }
+	  }]);
+
+	  return Sequences;
+	}(_react.Component);
+
+	Sequences.propTypes = {
+	  sequences: _react.PropTypes.arrayOf(_react2.default.PropTypes.object).isRequired
+	};
+		exports.default = Sequences;
+
+/***/ },
+/* 198 */
+/*!***********************!*\
+  !*** ./src/Streak.js ***!
+  \***********************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(/*! react */ 9);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var isSameDayMonthYear = function isSameDayMonthYear(a, b) {
+	  console.log('next picture date ' + a);
+	  console.log('counter date ' + b);
+	  if (a.getFullYear() !== b.getFullYear()) {
+	    return false;
+	  }
+	  if (a.getMonth() !== b.getMonth()) {
+	    return false;
+	  }
+	  if (a.getDay() !== b.getDay()) {
+	    return false;
+	  }
+	  return true;
+	};
+
+	var Streak = function Streak(_ref) {
+	  var streak = _ref.streak;
+
+
+	  var pictureDates = streak.map(function (s) {
+	    var date = new Date(s);
+	    return date;
+	  });
+
+	  var dates = [];
+	  var firstDate = new Date(pictureDates[0].getTime());
+	  var currentDate = new Date();
+	  var counter = 0;
+	  var counterDate = new Date(firstDate.getTime());
+
+	  while (counterDate <= currentDate) {
+	    counterDate.setDate(firstDate.getDate() + counter);
+	    if (isSameDayMonthYear(pictureDates[0], counterDate)) {
+	      dates.push({
+	        date: pictureDates.shift(),
+	        hasPicture: true
+	      });
+	    } else {
+	      dates.push({
+	        date: new Date(counterDate.getTime()),
+	        hasPicture: false
+	      });
+	    }
+	    counter += 1;
+	  }
+
+	  var dateElements = dates.map(function (_ref2) {
+	    var date = _ref2.date,
+	        hasPicture = _ref2.hasPicture;
+
+	    return hasPicture ? _react2.default.createElement(
+	      'div',
+	      { key: date.getTime(), className: 'tooltip streak_date streak_date__hasPicture' },
+	      _react2.default.createElement(
+	        'span',
+	        { className: 'tooltiptext' },
+	        ' ',
+	        date.toDateString(),
+	        ' '
+	      )
+	    ) : _react2.default.createElement(
+	      'div',
+	      { key: date.getTime(), className: 'tooltip streak_date' },
+	      _react2.default.createElement(
+	        'span',
+	        { className: 'tooltiptext' },
+	        ' ',
+	        date.toDateString(),
+	        ' '
+	      )
+	    );
+	  });
+
+	  return _react2.default.createElement(
+	    'div',
+	    { className: 'streak clearfix' },
+	    _react2.default.createElement(
+	      'div',
+	      null,
+	      'First post: ' + firstDate.toDateString()
+	    ),
+	    dateElements
+	  );
+	};
+
+	Streak.propTypes = {
+	  streak: _react.PropTypes.arrayOf(_react.PropTypes.number).isRequired
+	};
+
+		exports.default = Streak;
 
 /***/ }
 /******/ ]);

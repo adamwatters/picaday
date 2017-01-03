@@ -1,18 +1,22 @@
 import React, { Component, PropTypes } from 'react'
-import Slider from './Slider';
+import Slider from './Slider'
 import Picture from './Picture'
+import Streak from './Streak'
 
 class Sequence extends Component {
 
   static propTypes = {
     pictureURLs: PropTypes.arrayOf(React.PropTypes.string).isRequired,
-    link: PropTypes.string.isRequired
+    userName: PropTypes.string.isRequired,
+    userLink: PropTypes.string.isRequired,
+    showUserInfo: PropTypes.bool.isRequired,
+    streak: PropTypes.arrayOf(React.PropTypes.number).isRequired
   }
 
   constructor(props) {
     super(props);
     this.state = {
-      value: 0 /** Start value **/
+      value: 0
     };
   }
 
@@ -23,7 +27,7 @@ class Sequence extends Component {
   }
 
   render() {
-    const { pictureURLs } = this.props
+    const { pictureURLs, userName, userLink, showUserInfo, streak } = this.props
     const numberOfPictures = pictureURLs.length
     const { value } = this.state;
     const ceil = Math.ceil(value);
@@ -42,6 +46,16 @@ class Sequence extends Component {
 
     return (
       <div className='sequence'>
+        {showUserInfo ? 
+          <div className='sequence_info clearfix'>
+            <a href={userLink} >{userName}</a>
+            <Streak streak={streak} />
+          </div> 
+          : 
+          <div className='sequence_info clearfix'>
+            <Streak streak={streak} />
+          </div>
+        }
         <div className='pictures'>
           {pictures}
         </div>

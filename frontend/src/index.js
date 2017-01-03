@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import Sequences from './Sequences'
 import initCrop from './crop'
 
 const root = document.getElementById('root')
 
 if(root) {
-  const sequences = JSON.parse(root.dataset.props)
+  const sequencesData = JSON.parse(root.dataset.props)
 
   ReactDOM.render(
-    <App sequences={sequences}/>,
+    <Sequences sequences={sequencesData}/>,
     root
   )
 

@@ -8,7 +8,7 @@
   </section>
   <% if @user.sequences.any? %>
     <div class="sequences">
-      <%= sequences_react_component(@sequences) %>
+      <%= sequences_react_component(@sequences, false) %>
     </div>
   <% end %>
 </div>

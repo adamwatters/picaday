@@ -1,8 +1,4 @@
-<% provide(:title, @sequence.description) %>
 <div class="center-block">
-  <h1>
-    <%= @sequence.description %>
-  </h1>
   <section class="picture_form">
     <%= render partial: 'shared/picture_form', locals: {sequence_id: @sequence.id} %>
   </section>

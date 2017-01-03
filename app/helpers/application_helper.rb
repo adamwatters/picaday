@@ -9,11 +9,14 @@ module ApplicationHelper
     end
   end
 
-  def sequences_react_component(sequences)
+  def sequences_react_component(sequences, showUserInfo=true)
     tag('div', id:'root', data: {props: sequences.map{|sequence|
                                    {description: sequence.description,
                                     pictureURLs:sequence.picture_urls,
-                                    link: url_for(sequence)
+                                    userLink: url_for(sequence.user),
+                                    userName: sequence.user.name,
+                                    showUserInfo: showUserInfo,
+                                    streak: sequence.picture_created_at_times,
                                     }
     }})
   end
