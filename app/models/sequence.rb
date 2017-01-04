@@ -5,7 +5,7 @@ class Sequence < ApplicationRecord
   validates :user_id, presence: true
 
   def self.feed_for(user)
-    take(5)
+    take(6)
   end
 
   def picture_urls
