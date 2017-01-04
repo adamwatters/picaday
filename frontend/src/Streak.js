@@ -1,64 +1,50 @@
 import React, { PropTypes } from 'react'
-
-const isSameDayMonthYear = (a,b) => {
-  console.log('next picture date ' + a)
-  console.log('counter date ' + b)
-  if (a.getFullYear() !== b.getFullYear()) {
-    return false
-  }
-  if (a.getMonth() !== b.getMonth()) {
-    return false
-  }
-  if (a.getDay() !== b.getDay()) {
-    return false
-  }
-  return true
-}
+import moment from 'moment'
 
 const Streak = ({streak}) => {
 
   const pictureDates = streak.map((s) => {
-    const date = new Date(s)
-    return date
+    return moment(s)
   })
 
   const dates = []
-  const firstDate = new Date(pictureDates[0].getTime())
-  const currentDate = new Date()
-  let counter = 0
-  const counterDate = new Date(firstDate.getTime())
+  const firstDate = pictureDates[0].clone()
+  const currentDate = moment()
+  const counterDate = firstDate.clone()
 
-  while (counterDate <= currentDate) {
-    counterDate.setDate(firstDate.getDate() + counter)
-    if (isSameDayMonthYear(pictureDates[0], counterDate)) {
+  while (counterDate.isSameOrBefore(currentDate, 'day')) {
+    if (pictureDates[0] && pictureDates[0].isSame(counterDate, 'day')) {
       dates.push({
         date: pictureDates.shift(),
         hasPicture: true
       })
+      while (pictureDates[0] && pictureDates[0].isSame(counterDate, 'day')) {
+        pictureDates.shift()
+      }
     } else {
       dates.push({
-        date: new Date(counterDate.getTime()),
+        date: counterDate.clone(),
         hasPicture: false
       })
     }
-    counter += 1
+    counterDate.add(1,'day')
   }
 
   const dateElements = dates.map(({date, hasPicture}) => {
     return (
     hasPicture ? 
-      <div key={date.getTime()} className='tooltip streak_date streak_date__hasPicture'>
-        <span className="tooltiptext"> { date.toDateString() } </span>
+      <div key={date.format()} className='tooltip streak_date streak_date__hasPicture'>
+        <span className="tooltiptext"> { date.format('MMM D') } </span>
       </div> :
-      <div key={date.getTime()} className='tooltip streak_date'>
-        <span className="tooltiptext"> { date.toDateString() } </span>
+      <div key={date.format()} className='tooltip streak_date'>
+        <span className="tooltiptext"> { date.format('MMM D') } </span>
       </div>
     )
   })
 
   return  (
     <div className='streak clearfix'>
-      <div>{ `First post: ${firstDate.toDateString()}` }</div>
+      <div>{ `First post: ${firstDate.fromNow()}` }</div>
       { dateElements }
     </div>
   )
