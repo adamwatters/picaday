@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @sequence  = current_user.sequences.build
+    @sequence  = User.find(params[:id]).sequences.build
     @user = User.find(params[:id])
     @sequences = @user.sequences
     redirect_to root_url and return unless @user.activated?
