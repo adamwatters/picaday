@@ -8,7 +8,7 @@ class Sequence < ApplicationRecord
     sequences = Sequence.includes(:pictures).select do |s|
       s.pictures.length > 0
     end
-    sequences.take(4)
+    sequences.take(5).sort { |a,b| b.pictures.length <=> a.pictures.length }
   end
 
   def picture_urls
