@@ -15,8 +15,23 @@ section.container {
 @import 'sequence';
 @import 'slider';
 @import 'sequences';
+@import 'user-info';
 @import 'footer';
 
 #cropbox {
   max-width: 100%;
+}
+
+.alert {
+  background-color: lightcyan;
+  padding: 1rem;
+  border: .1rem solid #d1d1d1;
+  border-radius: 1rem;
+  &.alert-success {
+    background-color: lightcyan;
+  }
+}
+
+.hidden {
+  display: none;
 }

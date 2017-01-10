@@ -1,6 +1,10 @@
-.sequences_new-sequence {
+.sequences_sequence-container {
   display: inline-block;
   float: left;
+  padding: 1rem;
+}
+
+.sequences_new-sequence {
   width: 200px;
   height: 200px;
   line-height: 200px;
@@ -9,8 +13,6 @@
 }
 
 .sequences_existing-sequence {
-  display: inline-block;
-  float: left;
   width: 200px;
   height: 200px;
 }

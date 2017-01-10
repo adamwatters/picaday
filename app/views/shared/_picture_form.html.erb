@@ -2,15 +2,17 @@
   <%= render 'shared/error_messages', object: f.object %>
   <span>
     <%= hidden_field_tag :sequence_id, sequence_id %>
-    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+    <%= f.file_field :image, class: 'hidden', accept: 'image/jpeg,image/gif,image/png' %>
+    <label class="button" for="picture_image">Add Picture</label>
   </span>
-  <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
 <script type="text/javascript">
-  $('#picture').bind('change', function() {
-                                var size_in_megabytes = this.files[0].size/1024/1024;
-                                if (size_in_megabytes > 5) {
-                                  alert('Maximum file size is 5MB. Please choose a smaller file.');
-                                }
-                              });
+  $('#picture_image').bind('change', function() {
+                                                          var size_in_megabytes = this.files[0].size/1024/1024;
+                                                          if (size_in_megabytes > 5) {
+                                                            alert('Maximum file size is 5MB. Please choose a smaller file.');
+                                                          } else {
+                                                            $('#new_picture').submit();
+                                                          }
+                                                        });
 </script>
