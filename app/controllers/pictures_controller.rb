@@ -19,10 +19,10 @@ class PicturesController < ApplicationController
   def update
     @picture = Picture.find(params[:id])
     if @picture.update(crop_params)
-      flash[:success] = "picture successful updated"
+      flash[:success] = "picture successful uploaded"
       redirect_to @picture.sequence
     else
-      flash[:warning] = "picture not update updated"
+      flash[:warning] = "picture upload failed"
       @picture = Picture.find(params[:id])
       redirect_to @sequence
     end

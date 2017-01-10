@@ -2,13 +2,19 @@
 <div class="center-block clearfix">
   <%= link_to new_sequence_path do %>
     <div class="sequences_sequence-container">
-      <div class="sequences_new-sequence">New Sequence</div>
+      <div class="sequences_empty-sequence">New Sequence</div>
     </div>
   <% end %>
   <% @sequences.each do |sequence| %>
-    <% unless sequence.pictures.empty? %>
+    <% if sequence.pictures.empty? && sequence.persisted? %>
       <div class="sequences_sequence-container">
-        <div class="sequences_existing-sequence">
+        <%= link_to sequence do %>
+          <div class="sequences_empty-sequence">Empty</div>
+        </div>
+      <% end %>
+    <% elsif !sequence.pictures.empty? %>
+      <div class="sequences_sequence-container">
+        <div class="sequences_sequence-with-pictures">
           <%= link_to sequence do %>
             <%= image_tag sequence.pictures.last.image_url(:tiny) %>
           <% end %>

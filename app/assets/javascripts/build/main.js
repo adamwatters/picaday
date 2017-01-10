@@ -23369,16 +23369,16 @@
 	            { className: 'clearfix' },
 	            _react2.default.createElement(
 	              'a',
-	              { className: 'sequence_delete-button button', href: sequenceLink },
-	              'Edit'
-	            ),
-	            _react2.default.createElement(
-	              'a',
 	              { className: 'sequence_delete-button button', 'data-confirm': 'Are you sure you want to delete this sequence?',
 	                rel: 'nofollow',
 	                'data-method': 'delete',
 	                href: sequenceLink },
 	              'Delete'
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { className: 'sequence_delete-button button', href: sequenceLink },
+	              'Edit'
 	            )
 	          ) : _react2.default.createElement('span', null)
 	        ),

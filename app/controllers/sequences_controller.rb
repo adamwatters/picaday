@@ -33,7 +33,7 @@ class SequencesController < ApplicationController
   def destroy
     @sequence.destroy
     flash[:success] = "Sequence deleted"
-    redirect_to request.referrer || root_url
+    redirect_to sequences_user_path(current_user)
   end
 
   private

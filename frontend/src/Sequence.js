@@ -69,11 +69,11 @@ class Sequence extends Component {
           {pictures}
           {showDeleteLinks ? 
             <div className='clearfix'>
-              <a className='sequence_delete-button button' href={sequenceLink}>Edit</a>
               <a className='sequence_delete-button button' data-confirm="Are you sure you want to delete this sequence?" 
                rel="nofollow" 
                data-method="delete" 
                href={sequenceLink}>Delete</a>
+              <a className='sequence_delete-button button' href={sequenceLink}>Edit</a>
             </div>
             :
             <span></span>
