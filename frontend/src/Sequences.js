@@ -12,7 +12,9 @@ class Sequences extends Component {
       return <Sequence  key={i} 
                         userLink={s.userLink}
                         userName={s.userName}
+                        sequenceLink={s.sequenceLink}
                         showUserInfo={s.showUserInfo}
+                        showDeleteLinks={s.showDeleteLinks}
                         streak={s.streak}
                         pictureURLs={s.pictureURLs} />
     })

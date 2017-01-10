@@ -5,9 +5,9 @@ const Picture = ({url, opacity, first}) => {
     opacity: opacity
   }
   if (first) {
-    return <img className={'picture picture-first'} style={pictureStyle} src={url} role='presentation' />
+    return <img className={'sequence_picture sequence_picture-first'} style={pictureStyle} src={url} role='presentation' />
   } else {
-    return <img className={'picture'} style={pictureStyle} src={url} role='presentation' />
+    return <img className={'sequence_picture'} style={pictureStyle} src={url} role='presentation' />
   }
 }
 

@@ -2,10 +2,14 @@
   <section class="picture_form">
     <%= render partial: 'shared/picture_form', locals: {sequence_id: @sequence.id} %>
   </section>
+  <%= link_to "delete sequence", 
+      @sequence, 
+      method: :delete,
+      class: 'button',
+      data: { confirm: "Are you sure you want to delete this sequence?" } %>
   <% unless @pictures.count === 0 %>
-    <h3>Pictures (<%= @pictures.count %>)</h3>
-    <ol class="sequences">
+    <div class="sequences">
       <%= render @pictures.select {|picture| picture.valid?} %>
-    </ol>
+    </div>
   <% end %>
 </div>

@@ -54,16 +54,22 @@
   visibility: visible;
 }
 
-.pictures {
+.sequence_pictures {
   position: relative;
 }
 
-.picture {
+.button.sequence_delete-button {
+  float: right;
+  margin-left: .5rem;
+  margin-bottom: 0;
+}
+
+.sequence_picture {
   width: 500px;
   position: absolute;
   left: 0px;
 
-  &.picture-first {
+  &.sequence_picture-first {
     position: inherit;
   }
 }

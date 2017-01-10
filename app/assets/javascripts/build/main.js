@@ -23232,7 +23232,9 @@
 	        return _react2.default.createElement(_Sequence2.default, { key: i,
 	          userLink: s.userLink,
 	          userName: s.userName,
+	          sequenceLink: s.sequenceLink,
 	          showUserInfo: s.showUserInfo,
+	          showDeleteLinks: s.showDeleteLinks,
 	          streak: s.streak,
 	          pictureURLs: s.pictureURLs });
 	      });
@@ -23319,7 +23321,9 @@
 	          pictureURLs = _props.pictureURLs,
 	          userName = _props.userName,
 	          userLink = _props.userLink,
+	          sequenceLink = _props.sequenceLink,
 	          showUserInfo = _props.showUserInfo,
+	          showDeleteLinks = _props.showDeleteLinks,
 	          streak = _props.streak;
 
 	      var numberOfPictures = pictureURLs.length;
@@ -23358,8 +23362,25 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'pictures' },
-	          pictures
+	          { className: 'sequence_pictures' },
+	          pictures,
+	          showDeleteLinks ? _react2.default.createElement(
+	            'div',
+	            { className: 'clearfix' },
+	            _react2.default.createElement(
+	              'a',
+	              { className: 'sequence_delete-button button', href: sequenceLink },
+	              'Edit'
+	            ),
+	            _react2.default.createElement(
+	              'a',
+	              { className: 'sequence_delete-button button', 'data-confirm': 'Are you sure you want to delete this sequence?',
+	                rel: 'nofollow',
+	                'data-method': 'delete',
+	                href: sequenceLink },
+	              'Delete'
+	            )
+	          ) : _react2.default.createElement('span', null)
 	        ),
 	        numberOfPictures > 1 && _react2.default.createElement(_Slider2.default, { value: value, handleChange: this.handleSliderChange, numberOfPictures: numberOfPictures })
 	      );
@@ -23373,7 +23394,9 @@
 	  pictureURLs: _react.PropTypes.arrayOf(_react2.default.PropTypes.string).isRequired,
 	  userName: _react.PropTypes.string.isRequired,
 	  userLink: _react.PropTypes.string.isRequired,
+	  sequenceLink: _react.PropTypes.string.isRequired,
 	  showUserInfo: _react.PropTypes.bool.isRequired,
+	  showDeleteLinks: _react.PropTypes.bool.isRequired,
 	  streak: _react.PropTypes.arrayOf(_react2.default.PropTypes.number).isRequired
 	};
 		exports.default = Sequence;
@@ -23914,9 +23937,9 @@
 	    opacity: opacity
 	  };
 	  if (first) {
-	    return _react2.default.createElement('img', { className: 'picture picture-first', style: pictureStyle, src: url, role: 'presentation' });
+	    return _react2.default.createElement('img', { className: 'sequence_picture sequence_picture-first', style: pictureStyle, src: url, role: 'presentation' });
 	  } else {
-	    return _react2.default.createElement('img', { className: 'picture', style: pictureStyle, src: url, role: 'presentation' });
+	    return _react2.default.createElement('img', { className: 'sequence_picture', style: pictureStyle, src: url, role: 'presentation' });
 	  }
 	};
 

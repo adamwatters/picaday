@@ -9,7 +9,9 @@ class Sequence extends Component {
     pictureURLs: PropTypes.arrayOf(React.PropTypes.string).isRequired,
     userName: PropTypes.string.isRequired,
     userLink: PropTypes.string.isRequired,
+    sequenceLink: PropTypes.string.isRequired,
     showUserInfo: PropTypes.bool.isRequired,
+    showDeleteLinks: PropTypes.bool.isRequired,
     streak: PropTypes.arrayOf(React.PropTypes.number).isRequired
   }
 
@@ -27,7 +29,14 @@ class Sequence extends Component {
   }
 
   render() {
-    const { pictureURLs, userName, userLink, showUserInfo, streak } = this.props
+    const { pictureURLs, 
+            userName,
+            userLink,
+            sequenceLink,
+            showUserInfo,
+            showDeleteLinks,
+            streak 
+          } = this.props
     const numberOfPictures = pictureURLs.length
     const { value } = this.state;
     const ceil = Math.ceil(value);
@@ -56,8 +65,19 @@ class Sequence extends Component {
             <Streak streak={streak} />
           </div>
         }
-        <div className='pictures'>
+        <div className='sequence_pictures'>
           {pictures}
+          {showDeleteLinks ? 
+            <div className='clearfix'>
+              <a className='sequence_delete-button button' href={sequenceLink}>Edit</a>
+              <a className='sequence_delete-button button' data-confirm="Are you sure you want to delete this sequence?" 
+               rel="nofollow" 
+               data-method="delete" 
+               href={sequenceLink}>Delete</a>
+            </div>
+            :
+            <span></span>
+          }
         </div>
         {numberOfPictures > 1 &&
           <Slider value={value} handleChange={this.handleSliderChange} numberOfPictures={numberOfPictures}/>
