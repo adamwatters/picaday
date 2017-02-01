@@ -1325,17 +1325,36 @@
 
 	var _crop2 = _interopRequireDefault(_crop);
 
+	var _docReady = __webpack_require__(/*! doc-ready */ 307);
+
+	var _docReady2 = _interopRequireDefault(_docReady);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var root = document.getElementById('root');
+	(0, _docReady2.default)(function () {
 
-	if (root) {
-	  var sequencesData = JSON.parse(root.dataset.props);
+	  var root = document.getElementById('root');
+	  var uploader = document.getElementById('picture_image');
 
-	  _reactDom2.default.render(_react2.default.createElement(_Sequences2.default, { sequences: sequencesData }), root);
-	}
+	  if (root) {
+	    var sequencesData = JSON.parse(root.dataset.props);
 
-	(0, _crop2.default)();
+	    _reactDom2.default.render(_react2.default.createElement(_Sequences2.default, { sequences: sequencesData }), root);
+	  }
+
+	  if (uploader) {
+	    uploader.onchange = function () {
+	      var size_in_megabytes = this.files[0].size / 1024 / 1024;
+	      if (size_in_megabytes > 5) {
+	        alert('Maximum file size is 5MB. Please choose a smaller file.');
+	      } else {
+	        document.getElementById('new_picture').submit();
+	      }
+	    };
+	  }
+
+	  (0, _crop2.default)();
+		});
 
 /***/ },
 /* 9 */
